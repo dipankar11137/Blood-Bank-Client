@@ -22,6 +22,9 @@ const Contact = () => {
         </div>
         <div className="">
           <img
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="3000"
             style={{ marginTop: "-120px" }}
             className="h-96"
             src={call}
