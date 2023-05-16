@@ -1,4 +1,5 @@
 import React from "react";
+import "../../CSS/PicStyle.css";
 
 const Blood = () => {
   return (
@@ -10,6 +11,7 @@ const Blood = () => {
     >
       <figure>
         <img
+          className="pic-style"
           src="https://www.nzblood.co.nz/assets/Column/Blood-Type-Blood-Drops-A+__ScaleMaxWidthWzcwMF0.png"
           alt="blood"
         />
@@ -19,7 +21,7 @@ const Blood = () => {
         <p className="text-xl font-semibold">Quantity : 10</p>
         <p className="text-xl font-semibold">Price : $10</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary text-white text-xl">
+          <button className="btn btn-primary text-white text-xl pic-style">
             Buy Now
           </button>
         </div>

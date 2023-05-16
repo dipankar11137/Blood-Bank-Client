@@ -11,10 +11,10 @@ const Contact = () => {
             Can’t find your desired service? Let us know 24/6 in 16216.
           </h1>
           <div className="flex">
-            <button className="buttonStyle py-4 px-8 hover:bg-pink-600 hover:text-white text-3xl rounded-xl border-4 border-pink-600 ml-72 mt-5">
+            <button className="buttonStyle py-4 px-8 hover:bg-primary hover:text-white text-3xl rounded-xl border-4 border-primary ml-72 mt-5">
               Request To Contact
             </button>
-            <button className="flex py-4 px-8 hover:bg-pink-600 hover:text-white text-3xl rounded-xl border-4 border-pink-600 ml-14 mt-5">
+            <button className="flex py-4 px-8 hover:bg-primary hover:text-white text-3xl rounded-xl border-4 border-primary ml-14 mt-5">
               <FaPhoneAlt className="mt-1 animate-bounce" />
               <span className="ml-3">16216</span>
             </button>
