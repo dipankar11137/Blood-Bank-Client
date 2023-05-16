@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import help from "../../../../Images/blood/blood.png";
 
 const OurTeams = () => {
   const responsive = {
@@ -24,10 +25,25 @@ const OurTeams = () => {
   };
   return (
     <div className="mx-28 pb-10  mt-32">
+      <div className="flex justify-center">
+        <img
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="3000"
+          className="h-56"
+          src={help}
+          alt=""
+        />
+      </div>
       <h1 className="text-5xl font-bold my-10">Our Teams</h1>
       <div className=" pl-5 rounded-lg ">
         <Carousel className="rounded-lg pl-3" responsive={responsive}>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-left"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -39,7 +55,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">CEO</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-right"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -51,7 +72,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-left"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -63,7 +89,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-right"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -75,7 +106,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-left"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -87,7 +123,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-right"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -99,7 +140,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-left"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -111,7 +157,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-right"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
@@ -123,7 +174,12 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+          <div
+            data-aos="flip-left"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
+          >
             <figure>
               <img
                 className="w-full  pic-style rounded-lg h-[200px]"
