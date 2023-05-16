@@ -24,7 +24,7 @@ const Banner = () => {
             <div className="grid  grid-cols-3  gap-x-3">
               <div className="col-span-2">
                 <img
-                  className=" rounded-2xl w-full h-[700px]"
+                  className=" rounded-l-2xl w-full h-[700px]"
                   src="https://c0.wallpaperflare.com/preview/1023/625/239/blood-donation-blood-unit-of-blood-health.jpg"
                   alt=""
                 />
@@ -41,7 +41,7 @@ const Banner = () => {
             <div className="grid  grid-cols-3  gap-x-3">
               <div className="col-span-2">
                 <img
-                  className=" rounded-2xl w-full h-[700px]"
+                  className=" rounded-l-2xl w-full h-[700px]"
                   src="https://images.onlymyhealth.com/imported/images/2022/June/14_Jun_2022/Main_blooddonationmyths.jpg"
                   alt=""
                 />
@@ -59,7 +59,7 @@ const Banner = () => {
             <div className="grid  grid-cols-3  gap-x-3">
               <div className="col-span-2">
                 <img
-                  className=" rounded-2xl w-full h-[700px]"
+                  className=" rounded-l-2xl w-full h-[700px]"
                   src="https://www.geetanjalihospital.co.in/images/blood-bank.jpg"
                   alt=""
                 />
