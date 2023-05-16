@@ -25,7 +25,24 @@ const Banner = () => {
               <div className="col-span-2">
                 <img
                   className=" rounded-l-2xl w-full h-[700px]"
-                  src="https://c0.wallpaperflare.com/preview/1023/625/239/blood-donation-blood-unit-of-blood-health.jpg"
+                  src="https://www.geetanjalihospital.co.in/images/blood-bank.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="flex justify-center items-center">
+                <h1 className="text-8xl font-extrabold text-center">
+                  If you want to help people Donate{" "}
+                  <span className="text-red-600 uppercase">Blood</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div div className=" bg-blue-50 rounded-lg">
+            <div className="grid  grid-cols-3  gap-x-3">
+              <div className="col-span-2">
+                <img
+                  className=" rounded-l-2xl w-full h-[700px]"
+                  src="https://static.vecteezy.com/system/resources/previews/008/191/708/original/human-blood-donate-and-heart-rate-on-white-background-free-vector.jpg"
                   alt=""
                 />
               </div>
@@ -51,23 +68,6 @@ const Banner = () => {
                   Donate <span className="text-red-600">Blood</span> Make A
                   Difference <br />{" "}
                   <span className="text-green-700">Save A Life</span>
-                </h1>
-              </div>
-            </div>
-          </div>
-          <div div className=" bg-blue-50 rounded-lg">
-            <div className="grid  grid-cols-3  gap-x-3">
-              <div className="col-span-2">
-                <img
-                  className=" rounded-l-2xl w-full h-[700px]"
-                  src="https://www.geetanjalihospital.co.in/images/blood-bank.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="flex justify-center items-center">
-                <h1 className="text-8xl font-extrabold text-center">
-                  If you want to help people Donate{" "}
-                  <span className="text-red-600 uppercase">Blood</span>
                 </h1>
               </div>
             </div>
