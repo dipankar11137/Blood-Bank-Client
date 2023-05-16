@@ -9,6 +9,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NotFound from "./Components/Share/NotFound";
 
+// AOS Animation
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 function App() {
   return (
     <div>

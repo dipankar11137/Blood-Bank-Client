@@ -2,7 +2,12 @@ import React from "react";
 
 const Blood = () => {
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl hover:cursor-pointer hover:shadow-2xl hover:bg-lime-100">
+    <div
+      data-aos="flip-up"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="card card-compact w-96 bg-base-100 shadow-xl hover:cursor-pointer hover:shadow-2xl hover:bg-lime-100"
+    >
       <figure>
         <img
           src="https://www.nzblood.co.nz/assets/Column/Blood-Type-Blood-Drops-A+__ScaleMaxWidthWzcwMF0.png"
