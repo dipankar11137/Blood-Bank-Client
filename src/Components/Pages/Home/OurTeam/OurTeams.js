@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -24,124 +23,118 @@ const OurTeams = () => {
     },
   };
   return (
-    <div className="mx-28 pb-10 " style={{ marginTop: "-70px" }}>
+    <div className="mx-28 pb-10  mt-32">
+      <h1 className="text-5xl font-bold my-10">Our Teams</h1>
       <div className=" pl-5 rounded-lg ">
         <Carousel className="rounded-lg pl-3" responsive={responsive}>
-          <Link to="/acRepairs">
-            <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
-              <figure>
-                <img
-                  className="w-full  pic-style"
-                  src="https://thumbs.dreamstime.com/b/ac-repair-service-rgb-color-icon-ac-repair-service-rgb-color-icon-air-conditioning-systems-professional-maintenance-technical-188783189.jpg"
-                  alt="ac"
-                  style={{ height: "100px", width: "100px" }}
-                />
-              </figure>
-              <div className="pb-2 px-2">
-                <h2 className="text-center text-xl font-semibold">
-                  Ac Repair Services
-                </h2>
-              </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://www.pngmart.com/files/22/Elon-Musk-PNG-Free-Download.png"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">CEO</h2>
             </div>
-          </Link>
-          <Link to="/applianceRepairs">
-            <div className="card w-56 bg-base-100 text-black mt-2 shadow-2xl  hover:shadow-lg">
-              <figure>
-                <img
-                  className="w-full pic-style"
-                  src="https://i.ibb.co/4TYjG1N/appient-removebg-preview-1.png"
-                  alt="ac"
-                  style={{ height: "100px", width: "100px" }}
-                />
-              </figure>
-              <div className="pb-2 px-2">
-                <h2 className="text-center text-xl font-semibold">
-                  Appliance Repair
-                </h2>
-              </div>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://www.pngall.com/wp-content/uploads/2016/04/Mark-Zuckerberg-PNG-Clipart.gif"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
-          </Link>
-          <Link to="/tripsTravel">
-            <div className="card w-56 bg-base-100 text-black  mt-2  shadow-2xl  hover:shadow-lg">
-              <figure>
-                <img
-                  className="w-full  pic-style"
-                  src="https://cdn-icons-png.flaticon.com/512/6159/6159584.png"
-                  alt="ac"
-                  style={{ height: "100px", width: "100px" }}
-                />
-              </figure>
-              <div className="pb-2 px-2">
-                <h2 className="text-center text-xl font-semibold">
-                  Trips and Travel
-                </h2>
-              </div>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://www.pngplay.com/wp-content/uploads/9/Jeff-Bezos-PNG-Images-HD.png"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
-          </Link>
-          <Link to="/shifting">
-            <div className="card w-56 bg-base-100 text-black mt-2 shadow-2xl  hover:shadow-lg">
-              <figure>
-                <img
-                  className="w-full pic-style"
-                  src="https://s3.ap-south-1.amazonaws.com/cdn-shebaxyz/images/categories_images/icons_png/1583681093_tiwnn_52x52.webp"
-                  alt="ac"
-                  style={{ height: "100px", width: "100px" }}
-                />
-              </figure>
-              <div className="pb-2 px-2">
-                <h2 className="text-center text-xl font-semibold">Shifting</h2>
-              </div>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://clipart.info/images/ccovers/1503498239Mukesh%20Ambani%20Png%20Transparent.png"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
-          </Link>
-          <Link to="/carCare">
-            <div className="card w-56 bg-base-100 text-black mt-2 shadow-2xl  hover:shadow-lg">
-              <figure>
-                <img
-                  className="w-full  pic-style"
-                  src="https://s3.ap-south-1.amazonaws.com/cdn-shebaxyz/images/v4_uploads/category_icons/224/default_52x52.webp"
-                  alt="ac"
-                  style={{ height: "100px", width: "100px" }}
-                />
-              </figure>
-              <div className="pb-2 px-2">
-                <h2 className="text-center text-xl font-semibold">Car Care</h2>
-              </div>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2020/11/20/2354526-1562265866.png?itok=zj68FRwP"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
-          </Link>
-          <Link to="/beauty">
-            <div className="card w-56 bg-base-100 text-black mt-2  shadow-2xl  hover:shadow-lg">
-              <figure>
-                <img
-                  className="w-full  pic-style"
-                  src="https://s3.ap-south-1.amazonaws.com/cdn-shebaxyz/images/categories_images/icons_png/1599673571_tiwnn_52x52.webp"
-                  alt="ac"
-                  style={{ height: "100px", width: "100px" }}
-                />
-              </figure>
-              <div className="pb-2 px-2">
-                <h2 className="text-center text-xl font-semibold">
-                  Beauty & Salon
-                </h2>
-              </div>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKKDdV-tFcLEN-FzjVN1InP5MAtGB1KhU7dA&usqp=CAU"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
-          </Link>
-          <Link to="/">
-            <div className="card w-56 bg-base-100 text-black mt-2 border-blue-900  shadow-2xl  hover:shadow-lg">
-              <figure>
-                <img
-                  className="w-full pic-style"
-                  src="https://cdn-marketplacexyz.s3.ap-south-1.amazonaws.com/sheba_xyz/images/svg/all-services.svg"
-                  alt="ac"
-                  style={{ height: "100px", width: "100px" }}
-                />
-              </figure>
-              <div className="pb-2 px-2">
-                <h2 className="text-center text-xl font-semibold">
-                  All Services
-                </h2>
-              </div>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTryCn5-RCNaZHjsXqYcjTfEZU-qynqav9aZA&usqp=CAU"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
-          </Link>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://www.mancity.com/meta/media/233jlh2j/microsoftteams-image-127.png?width=600"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
+            </div>
+          </div>
+          <div className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg">
+            <figure>
+              <img
+                className="w-full  pic-style rounded-lg h-[200px]"
+                src="https://cdn-headshots.theathletic.com/soccer/TX7pFeb0aiHzuvjI_400x400.png"
+                alt="ac"
+              />
+            </figure>
+            <div className="pb-2 px-2 mt-5">
+              <h2 className="text-center text-xl font-semibold">Employee</h2>
+            </div>
+          </div>
         </Carousel>
       </div>
     </div>
