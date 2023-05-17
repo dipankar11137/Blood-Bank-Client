@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import call from "../../../../Images/Image/call.png";
+import call from "../../../../Images/Image/call cartoon.png";
 
 const Contact = () => {
   return (
