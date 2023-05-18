@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import call from "../../../../Images/Image/call cartoon.png";
+import RequestToContact from "./RequestToContact";
 
 const Contact = () => {
   return (
@@ -11,9 +12,16 @@ const Contact = () => {
             Can’t find your desired service? Let us know 24/6 in 16216.
           </h1>
           <div className="flex">
-            <button className="buttonStyle py-4 px-8 hover:bg-primary hover:text-white text-3xl rounded-xl border-4 border-primary ml-72 mt-5">
+            {/* MOdal Open */}
+            <label
+              htmlFor="my-modal"
+              className="buttonStyle py-4 px-8 hover:bg-primary hover:text-white text-3xl rounded-xl border-4 border-primary ml-72 mt-5 cursor-pointer"
+            >
               Request To Contact
-            </button>
+            </label>
+
+            {/* <RequestToContact /> */}
+            {/* Modal End */}
             <button className="flex py-4 px-8 hover:bg-primary hover:text-white text-3xl rounded-xl border-4 border-primary ml-14 mt-5">
               <FaPhoneAlt className="mt-1 animate-bounce" />
               <span className="ml-3">16216</span>
