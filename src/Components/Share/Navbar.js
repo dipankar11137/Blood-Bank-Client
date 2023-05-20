@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { BiDonateBlood } from "react-icons/bi";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -27,6 +27,7 @@ const Navbar = () => {
 
   const menuItem = (
     <>
+
       <li
         onClick={() => setSelectedButton("Button 1")}
         className={
@@ -39,6 +40,7 @@ const Navbar = () => {
           Home
         </Link>
       </li>
+      
       <li
         onClick={() => setSelectedButton("Button 2")}
         className={
@@ -74,8 +76,8 @@ const Navbar = () => {
                 : ""
             }
           >
-            <Link to="/myItem" className="font-bold  text-xl ">
-              My Item
+            <Link to="/about" className="font-bold  text-xl ">
+              About Us
             </Link>
           </li>
         </>
@@ -97,9 +99,10 @@ const Navbar = () => {
         background: `url("https://wallpapers.com/images/hd/blood-aesthetic-1920-x-1080-z8u95yfxdo0uopvb.jpg")`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+       
       }}
     >
-      <div class="navbar px-12 mx-auto text-white shadow-2xl rounded-lg">
+      <div class="navbar px-12 mx-auto text-white shadow-2xl  rounded-lg">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -128,14 +131,15 @@ const Navbar = () => {
           <Link to={"/"}>
             <div
               onClick={() => setSelectedButton("Button 1")}
-              className="btn btn-ghost text-white font-extrabold text-3xl uppercase"
+              className="btn btn-ghost text-white font-extrabold text-2xl  uppercase"
             >
               {" "}
               <BiDonateBlood
                 className="mr-4 text-primary bg-white rounded-full animate-bounce"
-                size={45}
+                size={50}
               />{" "}
               Blood Bank{" "}
+              
             </div>
           </Link>
         </div>
@@ -143,8 +147,9 @@ const Navbar = () => {
           <ul class="menu menu-horizontal p-0 font-bold text-xl hover:bg-se">
             {menuItem}
           </ul>
-        </div>
+         </div>
       </div>
+    
     </div>
   );
 };

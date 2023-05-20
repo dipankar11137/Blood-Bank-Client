@@ -35,7 +35,8 @@ const OurTeams = () => {
           alt=""
         />
       </div>
-      <h1 className="text-5xl font-bold my-10">Our Teams</h1>
+      
+         <h1 className="text-5xl font-bold my-10">Our Teams</h1>
       <div className=" pl-5 rounded-lg ">
         <Carousel className="rounded-lg pl-3" responsive={responsive}>
           <div
