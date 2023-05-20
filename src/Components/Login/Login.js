@@ -66,7 +66,7 @@ const Login = () => {
     >
       <div className="flex justify-center  ">
         <div className="flex justify-center mt-28 ">
-          <div className="card w-96  bg-violet-200  shadow-2xl">
+          <div className="card w-96  bg-violet-700  shadow-2xl">
             <div className="card-body">
               <div className="flex justify-center">
                 {' '}
@@ -76,7 +76,7 @@ const Login = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full max-w-xs">
                   <label className="label">
-                    <span className="label-text">Email</span>
+                    <span className="label-text text-white">Email</span>
                   </label>
                   <input
                     type="email"
@@ -108,7 +108,7 @@ const Login = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                   <label className="label">
-                    <span className="label-text">Password</span>
+                    <span className="label-text text-white">Password</span>
                   </label>
                   <input
                     type="password"
@@ -147,8 +147,8 @@ const Login = () => {
                 />
               </form>
 
-              <div className="divider">OR</div>
-              <p>
+              <div className="divider text-white">OR</div>
+              <p className="text-white">
                 <small>New to Blood bank ? </small>
               </p>
               <Link
