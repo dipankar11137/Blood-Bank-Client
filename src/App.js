@@ -4,8 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import CreateAccount from "./Components/Login/CreateAccount";
 import Login from "./Components/Login/Login";
-import Home from "./Components/Pages/Home/Home";
-import Footer from "./Components/Share/Footer";
+import Home from './Components/Pages/Home/Home';
 import Navbar from "./Components/Share/Navbar";
 import NotFound from "./Components/Share/NotFound";
 
@@ -13,6 +12,7 @@ import NotFound from "./Components/Share/NotFound";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import AboutUs from "./Components/Pages/About Us/AboutUs";
+import Members from './Components/Pages/Member/Members';
 AOS.init();
 
 function App() {
@@ -24,11 +24,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<AboutUs />}></Route>
+        <Route path="/member" element={<Members />}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       <ToastContainer />
     </div>
   );

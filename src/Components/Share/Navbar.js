@@ -27,53 +27,52 @@ const Navbar = () => {
 
   const menuItem = (
     <>
-
       <li
-        onClick={() => setSelectedButton("Button 1")}
+        onClick={() => setSelectedButton('Button 1')}
         className={
-          selectedButton === "Button 1"
-            ? "bg-primary text-white rounded-lg"
-            : ""
+          selectedButton === 'Button 1'
+            ? 'bg-primary text-white rounded-lg'
+            : ''
         }
       >
         <Link to="/" className="font-bold  text-xl ">
           Home
         </Link>
       </li>
-      
-      <li
-        onClick={() => setSelectedButton("Button 2")}
+
+      {/* <li
+        onClick={() => setSelectedButton('Button 2')}
         className={
-          selectedButton === "Button 2"
-            ? "bg-primary text-white rounded-lg"
-            : ""
+          selectedButton === 'Button 2'
+            ? 'bg-primary text-white rounded-lg'
+            : ''
         }
       >
         <Link to="/blog" className="font-bold  text-xl ">
           Blog
         </Link>
-      </li>
+      </li> */}
 
       {user && (
         <>
           <li
-            onClick={() => setSelectedButton("Button 4")}
+            onClick={() => setSelectedButton('Button 4')}
             className={
-              selectedButton === "Button 4"
-                ? "bg-primary text-white rounded-lg"
-                : ""
+              selectedButton === 'Button 4'
+                ? 'bg-primary text-white rounded-lg'
+                : ''
             }
           >
-            <Link to="/manageItem" className="font-bold  text-xl ">
-              Manage Item
+            <Link to="/member" className="font-bold  text-xl ">
+              Members
             </Link>
           </li>
           <li
-            onClick={() => setSelectedButton("Button 5")}
+            onClick={() => setSelectedButton('Button 5')}
             className={
-              selectedButton === "Button 5"
-                ? "bg-primary text-white rounded-lg"
-                : ""
+              selectedButton === 'Button 5'
+                ? 'bg-primary text-white rounded-lg'
+                : ''
             }
           >
             <Link to="/about" className="font-bold  text-xl ">
