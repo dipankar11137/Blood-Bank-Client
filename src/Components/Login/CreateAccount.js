@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithEmailAndPassword,
@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const CreateAccount = () => {
+  const [bloodGroup, setBloodGroup] = useState('');
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const {
     register,
@@ -28,26 +29,33 @@ const CreateAccount = () => {
 
   let signInError;
 
-  const createDBUser = (name, email) => {
-    fetch(`http://localhost:5000/create-user/${email}`, {
+  const createDBUser = data => {
+    const updateUser = {
+      name: data.name,
+      email: data.email,
+      studentId: data.studentId,
+      bloodGroup,
+    };
+    // console.log(updateUser);
+    fetch(`http://localhost:5000/create-user/${data?.email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify(updateUser),
     })
       .then(res => res.json())
       .then(data => {
         toast.success('Successfully Create a Profile');
+        navigate('/');
       });
   };
 
   const onSubmit = data => {
-    // console.log(data.email, data.password, data.name);
     createUserWithEmailAndPassword(data.email, data.password);
     signInWithEmailAndPassword(data.email, data.password);
     updateProfile({ displayName: data.name });
-    createDBUser(data.name, data.email);
+    createDBUser(data);
     navigate('/');
   };
   return (
@@ -61,7 +69,7 @@ const CreateAccount = () => {
       // className="flex justify-center h-screen bg-slate-700"
     >
       <div className="flex justify-center   ">
-        <div className="card w-96 shadow-2xl bg-violet-700 mt-20">
+        <div className="card w-[500px] shadow-2xl bg-violet-700 mt-5">
           <div className="card-body">
             <div className="flex justify-center">
               <img
@@ -73,14 +81,14 @@ const CreateAccount = () => {
             {/* <h2 className="text-center text-2xl font-bold">SignUp</h2> */}
 
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="form-control w-full max-w-xs">
+              <div className="form-control w-full  ">
                 <label className="label">
                   <span className="label-text text-white">Name</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="input input-bordered bg-white w-full max-w-xs"
+                  className="input input-bordered bg-white w-full  "
                   {...register('name', {
                     required: {
                       value: true,
@@ -96,14 +104,14 @@ const CreateAccount = () => {
                   )}
                 </label>
               </div>
-              <div className="form-control w-full max-w-xs">
+              <div className="form-control w-full  ">
                 <label className="label">
                   <span className="label-text text-white">Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="input input-bordered bg-white w-full max-w-xs"
+                  className="input input-bordered bg-white w-full  "
                   {...register('email', {
                     required: {
                       value: true,
@@ -128,14 +136,58 @@ const CreateAccount = () => {
                   )}
                 </label>
               </div>
-              <div className="form-control w-full max-w-xs">
+              {/* Student Id */}
+              <div className="form-control w-full  ">
+                <label className="label">
+                  <span className="label-text text-white">Student Id</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Your Student Id"
+                  className="input input-bordered bg-white w-full  "
+                  {...register('studentId', {
+                    required: {
+                      value: true,
+                      message: 'Student Id is Required',
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.studentId?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.studentId.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              <div>
+                {/* Blood Group */}
+                <select
+                  onChange={e => setBloodGroup(e.target.value)}
+                  className="select select-info w-full  text-xl"
+                >
+                  <option disabled selected>
+                    Select Blood Group
+                  </option>
+                  <option>A+</option>
+                  <option>A-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
+                  <option>B+</option>
+                  <option>B-</option>
+                  <option>O+</option>
+                  <option>O-</option>
+                </select>
+              </div>
+              {/* Password */}
+              <div className="form-control w-full  ">
                 <label className="label">
                   <span className="label-text text-white">Password</span>
                 </label>
                 <input
                   type="password"
                   placeholder="Password"
-                  className="input input-bordered bg-white w-full max-w-xs"
+                  className="input input-bordered bg-white w-full  "
                   {...register('password', {
                     required: {
                       value: true,
@@ -161,11 +213,20 @@ const CreateAccount = () => {
                 </label>
               </div>
               {signInError}
-              <input
-                className="btn btn-primary w-full text-white"
-                type="submit"
-                value="Sign Up"
-              />
+              {bloodGroup ? (
+                <input
+                  className="btn btn-primary w-full text-white"
+                  type="submit"
+                  value="Sign Up"
+                />
+              ) : (
+                <input
+                  className="btn btn-primary w-full text-white"
+                  disabled
+                  type="submit"
+                  value="Sign Up"
+                />
+              )}
             </form>
 
             <div className="divider  text-white">OR</div>
