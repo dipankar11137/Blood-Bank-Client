@@ -9,7 +9,7 @@
   {
     "_id": 2,
     "name": "A-",
-    "price": "10",
+    "price": "12",
     "quantity": "10",
     "img": "https://www.nzblood.co.nz/assets/Column/Blood-Type-Blood-Drops-A-v2__ScaleMaxWidthWzcwMF0.png"
   },
@@ -23,7 +23,7 @@
   {
     "_id": 4,
     "name": "AB-",
-    "price": "10",
+    "price": "15",
     "quantity": "2",
     "img": "https://cdn2.storyasset.link/H4tpMcVwKAO7pxKX0IUdWJRXln93/ms-xekdlnodqd.jpg"
   },
@@ -37,7 +37,7 @@
   {
     "_id": 2,
     "name": "B-",
-    "price": "10",
+    "price": "13",
     "quantity": "20",
     "img": "https://cdn3d.iconscout.com/3d/free/thumb/free-blood-b-negative-4731858-3934344.png"
   },
