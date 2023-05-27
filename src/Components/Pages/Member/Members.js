@@ -16,9 +16,8 @@ const Members = () => {
       name: users?.name,
       bloodGroup: users?.bloodGroup,
       studentId: users?.studentId,
-      role: 'member',
+      role: true,
     };
-    console.log(email);
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
       fetch(`http://localhost:5000/create-user/${email}`, {
@@ -34,6 +33,29 @@ const Members = () => {
         });
     }
   };
+  const handleRemoveMember = email => {
+    const updatedProfile = {
+      email: users?.email,
+      name: users?.name,
+      bloodGroup: users?.bloodGroup,
+      studentId: users?.studentId,
+      role: false,
+    };
+    const proceed = window.confirm('Are You Sure ?');
+    if (proceed) {
+      fetch(`http://localhost:5000/create-user/${email}`, {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updatedProfile),
+      })
+        .then(res => res.json())
+        .then(data => {
+          toast.success('Successfully Remove  Member ');
+        });
+    }
+  };
   return (
     <div>
       <div className="overflow-x-auto">
@@ -45,7 +67,7 @@ const Members = () => {
               <th className="text-xl">Name</th>
               <th className="text-xl">Student Id</th>
               <th className="text-xl">Blood Group</th>
-              <th className="text-xl">Add member / Id</th>
+              <th className="text-xl">Make member / Id</th>
               <th className="text-xl">Remove</th>
             </tr>
           </thead>
@@ -56,6 +78,7 @@ const Members = () => {
                 user={user}
                 index={index + 1}
                 handleAddMember={handleAddMember}
+                handleRemoveMember={handleRemoveMember}
               ></Member>
             ))}
           </tbody>
