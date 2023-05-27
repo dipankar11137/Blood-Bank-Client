@@ -1,9 +1,10 @@
 import React from "react";
-import Banner from "./Banner/Banner";
-import Bloods from "./Blood/Bloods";
-import Contact from "./Contact/Contact";
-import Text from "./Text/Text";
-import OurTeams from "./OurTeam/OurTeams";
+import Footer from '../../Share/Footer';
+import Banner from './Banner/Banner';
+import Bloods from './Blood/Bloods';
+import Contact from './Contact/Contact';
+import OurTeams from './OurTeam/OurTeams';
+import Text from './Text/Text';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Bloods />
       <OurTeams />
       <Contact />
+      <Footer />
     </div>
   );
 };
