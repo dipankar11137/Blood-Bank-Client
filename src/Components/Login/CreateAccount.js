@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   useCreateUserWithEmailAndPassword,
-  useSignInWithGoogle,
+  useSignInWithEmailAndPassword,
   useUpdateProfile,
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const CreateAccount = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const {
     register,
     formState: { errors },
@@ -27,30 +27,27 @@ const CreateAccount = () => {
   let from = location.state?.from?.pathname || '/';
 
   let signInError;
-  if (gUser) {
-    navigate('/');
-  }
 
   const createDBUser = (name, email) => {
-    // fetch(`https://boxberry.onrender.com/create-user/${email}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({ name, email }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
+    fetch(`http://localhost:5000/create-user/${email}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ name, email }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success('Successfully Create a Profile');
+      });
   };
 
   const onSubmit = data => {
     // console.log(data.email, data.password, data.name);
     createUserWithEmailAndPassword(data.email, data.password);
+    signInWithEmailAndPassword(data.email, data.password);
     updateProfile({ displayName: data.name });
     createDBUser(data.name, data.email);
-    toast.success('Updated profile');
     navigate('/');
   };
   return (
