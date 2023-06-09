@@ -8,9 +8,12 @@ const BookBlood = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
   const email = user.email;
+  const [users, setUsers] = useState([]);
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState('');
   const navigator = useNavigate();
+
+  const userOne = users[0];
 
   const totalPrice = quantity * product?.price;
 
@@ -19,6 +22,11 @@ const BookBlood = () => {
       .then(res => res.json())
       .then(data => setProduct(data));
   }, [id]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/user/${email}`)
+      .then(res => res.json())
+      .then(data => setUsers(data));
+  }, [users, email]);
 
   // console.log(email);
   const {
@@ -36,6 +44,7 @@ const BookBlood = () => {
       bloodGroup: product?.name,
       img: product?.img,
       email,
+      user: userOne,
     };
     console.log(changeUrl);
     // const url = `http://localhost:5000/buyProduct`;
