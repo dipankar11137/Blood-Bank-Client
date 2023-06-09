@@ -28,7 +28,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<AboutUs />}></Route>
-        <Route path="/book/:id" element={<BookBlood />}></Route>
+        <Route
+          path="/book/:id"
+          element={
+            <RequireAuth>
+              <BookBlood />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>

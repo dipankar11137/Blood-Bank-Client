@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -14,11 +14,11 @@ const BookBlood = () => {
 
   const totalPrice = quantity * product?.price;
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/buy/${id}`)
-  //     .then(res => res.json())
-  //     .then(data => setProduct(data));
-  // }, [id]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/blood/${id}`)
+      .then(res => res.json())
+      .then(data => setProduct(data));
+  }, [id]);
 
   // console.log(email);
   const {
@@ -28,17 +28,16 @@ const BookBlood = () => {
     reset,
   } = useForm();
   const onSubmit = data => {
-    // const changeUrl = {
-    //   ...data,
-    //   quantity,
-    //   totalPrice,
-    //   price: product.price,
-    //   name: product?.name,
-    //   img: product?.img,
-    //   productsCategory: product?.productsCategory,
-    //   email,
-    // };
-    // // console.log(changeUrl);
+    const changeUrl = {
+      ...data,
+      quantity,
+      totalPrice,
+      price: product.price,
+      bloodGroup: product?.name,
+      img: product?.img,
+      email,
+    };
+    console.log(changeUrl);
     // const url = `http://localhost:5000/buyProduct`;
     // fetch(url, {
     //   method: 'POST',
@@ -56,9 +55,9 @@ const BookBlood = () => {
   };
   return (
     <div>
-      <div className="bg-gradient-to-r from-red-100 to-green-100">
-        <h2 className="pt-5  font-bold text-4xl text-center  uppercase">
-          Book Blood
+      <div className="bg-gradient-to-r from-red-100 to-green-100 pb-20">
+        <h2 className="pt-5  font-bold text-4xl text-center  uppercase mb-5">
+          Buy Blood
         </h2>
         <div className="flex justify-center">
           <div className="flex justify-center bg-green-800 p-5 rounded-2xl w-[500px]  ml-5 ">
@@ -107,7 +106,7 @@ const BookBlood = () => {
               />
               <label className="label">
                 {errors.date?.type === 'required' && (
-                  <span className="label-text-alt text-red-50">
+                  <span className="label-text-alt text-xl text-red-400">
                     {errors?.date?.message}
                   </span>
                 )}
@@ -129,7 +128,7 @@ const BookBlood = () => {
               />
               <label className="label">
                 {errors.phone?.type === 'required' && (
-                  <span className="label-text-alt text-red-50">
+                  <span className="label-text-alt text-xl text-red-400">
                     {errors?.phone?.message}
                   </span>
                 )}
@@ -154,7 +153,7 @@ const BookBlood = () => {
               />
               <label className="label">
                 {errors.address?.type === 'required' && (
-                  <span className="label-text-alt text-red-50">
+                  <span className="label-text-alt text-xl text-red-400">
                     {errors?.address?.message}
                   </span>
                 )}

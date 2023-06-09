@@ -1,7 +1,7 @@
 import React from "react";
 import "../../CSS/PicStyle.css";
 
-const Blood = ({ blood }) => {
+const Blood = ({ blood, handleBook }) => {
   return (
     <div
       data-aos="flip-up"
@@ -23,7 +23,10 @@ const Blood = ({ blood }) => {
         <p className="text-xl font-semibold">Quantity : {blood?.quantity}</p>
         <p className="text-xl font-semibold">Price : ${blood?.price}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary text-white text-xl pic-style">
+          <button
+            onClick={() => handleBook(blood?._id)}
+            className="btn btn-primary text-white text-xl pic-style"
+          >
             Buy Now
           </button>
         </div>
