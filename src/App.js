@@ -14,7 +14,8 @@ import "aos/dist/aos.css";
 import RequireAuth from './Components/Login/RequireAUth';
 import AboutUs from './Components/Pages/About Us/AboutUs';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
-import Members from './Components/Pages/Member/Members';
+import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods';
+import Members from './Components/Pages/Dashboard/Member/Members';
 AOS.init();
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<AboutUs />}></Route>
-        <Route path="/member" element={<Members />}></Route>
+        {/* <Route path="/member" element={<Members />}></Route> */}
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
@@ -40,9 +41,9 @@ function App() {
             </RequireAuth>
           }
         >
-          {/* <Route index element={<AddItem />} />
-          <Route path="manageItem" element={<ManageItem />} />
-          <Route path="addJobs" element={<AddJobs />} />
+          <Route index element={<Members />} />
+          <Route path="manageBlood" element={<ManageBloods />} />
+          {/*<Route path="addJobs" element={<AddJobs />} />
           <Route path="manageBooking" element={<ManageBookings />} /> */}
         </Route>
         {/* Dashboard End */}
