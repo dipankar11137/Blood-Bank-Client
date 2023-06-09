@@ -11,7 +11,8 @@ import NotFound from "./Components/Share/NotFound";
 // AOS Animation
 import AOS from "aos";
 import "aos/dist/aos.css";
-import AboutUs from "./Components/Pages/About Us/AboutUs";
+import RequireAuth from './Components/Login/RequireAUth';
+import AboutUs from './Components/Pages/About Us/AboutUs';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import Members from './Components/Pages/Member/Members';
 AOS.init();
@@ -30,7 +31,21 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
 
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        {/* Dashboard */}
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          {/* <Route index element={<AddItem />} />
+          <Route path="manageItem" element={<ManageItem />} />
+          <Route path="addJobs" element={<AddJobs />} />
+          <Route path="manageBooking" element={<ManageBookings />} /> */}
+        </Route>
+        {/* Dashboard End */}
       </Routes>
       {/* <Footer /> */}
       <ToastContainer />
