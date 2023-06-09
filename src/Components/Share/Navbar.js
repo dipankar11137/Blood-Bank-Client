@@ -68,6 +68,18 @@ const Navbar = () => {
             </Link>
           </li>
           <li
+            onClick={() => setSelectedButton('Button 7')}
+            className={
+              selectedButton === 'Button 7'
+                ? 'bg-primary text-white rounded-lg'
+                : ''
+            }
+          >
+            <Link to="/dashboard" className="font-bold  text-xl ">
+              Dashboard
+            </Link>
+          </li>
+          <li
             onClick={() => setSelectedButton('Button 5')}
             className={
               selectedButton === 'Button 5'
