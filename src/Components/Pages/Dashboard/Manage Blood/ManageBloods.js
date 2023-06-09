@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import ManageBlood from './ManageBlood';
 
 const ManageBloods = () => {
@@ -13,6 +14,25 @@ const ManageBloods = () => {
     fetch(`http://localhost:5000/blood/${id}`)
       .then(res => res.json())
       .then(data => setSingleBlood(data));
+  };
+  const handleRestock = event => {
+    event.preventDefault();
+    const newQuantity =
+      parseInt(event.target.quantity.value) + parseInt(singleBlood?.quantity);
+    // console.log(newQuantity);
+    const updateQuantity = { quantity: newQuantity };
+    fetch(`http://localhost:5000/bloodId/${singleBlood?._id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updateQuantity),
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success('Restock Is Successfully');
+        event.target.reset();
+      });
   };
   return (
     <div>
@@ -38,6 +58,7 @@ const ManageBloods = () => {
                 index={index + 1}
                 handleEdit={handleEdit}
                 singleBlood={singleBlood}
+                handleRestock={handleRestock}
               ></ManageBlood>
             ))}
           </tbody>
