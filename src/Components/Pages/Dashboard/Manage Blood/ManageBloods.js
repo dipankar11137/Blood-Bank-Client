@@ -34,6 +34,33 @@ const ManageBloods = () => {
         event.target.reset();
       });
   };
+
+  const handleDecrease = event => {
+    event.preventDefault();
+    if (
+      parseInt(singleBlood?.quantity) >= parseInt(event.target.quantity.value)
+    ) {
+      const newQuantity =
+        parseInt(singleBlood?.quantity) - parseInt(event.target.quantity.value);
+      // console.log(newQuantity);
+      const updateQuantity = { quantity: newQuantity };
+      fetch(`http://localhost:5000/bloodId/${singleBlood?._id}`, {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateQuantity),
+      })
+        .then(res => res.json())
+        .then(data => {
+          toast.success('Decrease Is Successfully');
+          event.target.reset();
+        });
+    } else {
+      toast.error('The new value is greater than the previous value');
+      event.target.reset();
+    }
+  };
   return (
     <div>
       <div className="overflow-x-auto">
@@ -59,6 +86,7 @@ const ManageBloods = () => {
                 handleEdit={handleEdit}
                 singleBlood={singleBlood}
                 handleRestock={handleRestock}
+                handleDecrease={handleDecrease}
               ></ManageBlood>
             ))}
           </tbody>
