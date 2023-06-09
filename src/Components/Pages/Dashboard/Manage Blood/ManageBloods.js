@@ -42,7 +42,7 @@ const ManageBloods = () => {
     ) {
       const newQuantity =
         parseInt(singleBlood?.quantity) - parseInt(event.target.quantity.value);
-      // console.log(newQuantity);
+
       const updateQuantity = { quantity: newQuantity };
       fetch(`http://localhost:5000/bloodId/${singleBlood?._id}`, {
         method: 'PUT',
