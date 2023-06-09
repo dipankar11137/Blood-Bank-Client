@@ -3,11 +3,17 @@ import ManageBlood from './ManageBlood';
 
 const ManageBloods = () => {
   const [bloods, setBloods] = useState([]);
+  const [singleBlood, setSingleBlood] = useState({});
   useEffect(() => {
     fetch('http://localhost:5000/bloods')
       .then(res => res.json())
       .then(data => setBloods(data));
   }, [bloods]);
+  const handleEdit = id => {
+    fetch(`http://localhost:5000/blood/${id}`)
+      .then(res => res.json())
+      .then(data => setSingleBlood(data));
+  };
   return (
     <div>
       <div className="overflow-x-auto">
@@ -30,6 +36,8 @@ const ManageBloods = () => {
                 key={blood._id}
                 blood={blood}
                 index={index + 1}
+                handleEdit={handleEdit}
+                singleBlood={singleBlood}
               ></ManageBlood>
             ))}
           </tbody>
