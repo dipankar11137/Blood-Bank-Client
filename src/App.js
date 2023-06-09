@@ -16,18 +16,19 @@ import AboutUs from './Components/Pages/About Us/AboutUs';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods';
 import Members from './Components/Pages/Dashboard/Member/Members';
+import BookBlood from './Components/Pages/Home/Book Blood/BookBlood';
 AOS.init();
 
 function App() {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-red-100 to-green-100">
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<AboutUs />}></Route>
-        {/* <Route path="/member" element={<Members />}></Route> */}
+        <Route path="/book/:id" element={<BookBlood />}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>

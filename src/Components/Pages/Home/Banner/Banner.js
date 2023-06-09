@@ -1,8 +1,8 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../../CSS/PicStyle.css";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import '../../CSS/PicStyle.css';
 
 const Banner = () => {
   const settings = {
@@ -13,12 +13,12 @@ const Banner = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
-    cssEase: "linear",
+    cssEase: 'linear',
     pauseOnHover: true,
     fade: true,
   };
   return (
-    <div className="">
+    <div className="bg-white">
       <div className="mx-6 p-1 rounded-2xl text-black">
         <Slider {...settings}>
           <div div className=" bg-blue-50 rounded-lg">
@@ -32,7 +32,7 @@ const Banner = () => {
               </div>
               <div className="flex justify-center items-center">
                 <h1 className="text-7xl font-extrabold text-center">
-                  If you <br /> want to help people <br /> Donate{" "}
+                  If you <br /> want to help people <br /> Donate{' '}
                   <span className="text-red-600 uppercase">Blood</span>
                 </h1>
               </div>
@@ -67,7 +67,7 @@ const Banner = () => {
               <div className="flex justify-center items-center">
                 <h1 className="text-7xl font-extrabold text-center">
                   Donate <span className="text-red-600">Blood</span> Make A
-                  Difference <br />{" "}
+                  Difference <br />{' '}
                   <span className="text-green-700">Save A Life</span>
                 </h1>
               </div>
