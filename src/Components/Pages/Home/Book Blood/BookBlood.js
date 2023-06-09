@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
 
 const BookBlood = () => {
@@ -47,20 +48,20 @@ const BookBlood = () => {
       user: userOne,
     };
     console.log(changeUrl);
-    // const url = `http://localhost:5000/buyProduct`;
-    // fetch(url, {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(changeUrl),
-    // })
-    //   .then(res => res.json())
-    //   .then(result => {
-    //     toast.success('Buy');
-    //     reset();
-    //     navigator('/');
-    //   });
+    const url = `http://localhost:5000/buyBlood`;
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(changeUrl),
+    })
+      .then(res => res.json())
+      .then(result => {
+        toast.success(' Successfully Buy this Blood');
+        reset();
+        navigator('/');
+      });
   };
   return (
     <div>
