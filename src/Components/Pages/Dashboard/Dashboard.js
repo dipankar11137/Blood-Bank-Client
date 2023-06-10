@@ -58,10 +58,10 @@ const Dashboard = () => {
                 }
               >
                 <Link
-                  to="/dashboard"
+                  to="/dashboard/manageBuy"
                   className="font-bold  text-xl hover:text-green-300"
                 >
-                  Manage Booking
+                  Manage Buy
                 </Link>
               </li>
             </ul>

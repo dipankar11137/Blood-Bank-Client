@@ -15,6 +15,7 @@ import RequireAuth from './Components/Login/RequireAUth';
 import AboutUs from './Components/Pages/About Us/AboutUs';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods';
+import ManageBuys from './Components/Pages/Dashboard/ManageBuy/ManageBuys';
 import Members from './Components/Pages/Dashboard/Member/Members';
 import BookBlood from './Components/Pages/Home/Book Blood/BookBlood';
 AOS.init();
@@ -51,8 +52,7 @@ function App() {
         >
           <Route index element={<Members />} />
           <Route path="manageBlood" element={<ManageBloods />} />
-          {/*<Route path="addJobs" element={<AddJobs />} />
-          <Route path="manageBooking" element={<ManageBookings />} /> */}
+          <Route path="manageBuy" element={<ManageBuys />} />
         </Route>
         {/* Dashboard End */}
       </Routes>
