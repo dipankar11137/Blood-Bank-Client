@@ -63,7 +63,7 @@ const Navbar = () => {
                 : ''
             }
           >
-            <Link to="/member" className="font-bold  text-xl ">
+            <Link to="/ourMembers" className="font-bold  text-xl ">
               Members
             </Link>
           </li>

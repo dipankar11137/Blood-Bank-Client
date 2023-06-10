@@ -18,6 +18,7 @@ import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods
 import ManageBuys from './Components/Pages/Dashboard/ManageBuy/ManageBuys';
 import Members from './Components/Pages/Dashboard/Member/Members';
 import BookBlood from './Components/Pages/Home/Book Blood/BookBlood';
+import OurMembers from './Components/Pages/OurMembers/OurMembers';
 AOS.init();
 
 function App() {
@@ -29,6 +30,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<AboutUs />}></Route>
+        <Route
+          path="/ourMembers"
+          element={
+            <RequireAuth>
+              <OurMembers />
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/book/:id"
           element={
