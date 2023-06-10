@@ -2,28 +2,28 @@ import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BiDonateBlood } from "react-icons/bi";
-import { Link, useNavigate } from "react-router-dom";
-import auth from "../../firebase.init";
+import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [booking, setBooking] = useState([]);
-  const [selectedButton, setSelectedButton] = useState("");
+  const [selectedButton, setSelectedButton] = useState('');
   const logout = () => {
     signOut(auth);
   };
 
   useEffect(() => {
     fetch(`https://boxberry.onrender.com/carBooking/${email}`)
-      .then((res) => res.json())
-      .then((data) => setBooking(data));
-  }, [booking]);
+      .then(res => res.json())
+      .then(data => setBooking(data));
+  }, [booking, email]);
 
-  const handleBook = () => {
-    navigate("/myOrders");
-  };
+  // const handleBook = () => {
+  //   navigate("/myOrders");
+  // };
 
   const menuItem = (
     <>
@@ -108,9 +108,8 @@ const Navbar = () => {
       className="px-20 bg-accent"
       style={{
         background: `url("https://wallpapers.com/images/hd/blood-aesthetic-1920-x-1080-z8u95yfxdo0uopvb.jpg")`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-       
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div class="navbar px-12 mx-auto text-white shadow-2xl  rounded-lg">
@@ -139,18 +138,17 @@ const Navbar = () => {
               {menuItem}
             </ul>
           </div>
-          <Link to={"/"}>
+          <Link to={'/'}>
             <div
-              onClick={() => setSelectedButton("Button 1")}
+              onClick={() => setSelectedButton('Button 1')}
               className="btn btn-ghost text-white font-extrabold text-2xl  uppercase"
             >
-              {" "}
+              {' '}
               <BiDonateBlood
                 className="mr-4 text-primary bg-white rounded-full animate-bounce"
                 size={50}
-              />{" "}
-              Blood Bank{" "}
-              
+              />{' '}
+              Blood Bank{' '}
             </div>
           </Link>
         </div>
@@ -158,9 +156,8 @@ const Navbar = () => {
           <ul class="menu menu-horizontal p-0 font-bold text-xl hover:bg-se">
             {menuItem}
           </ul>
-         </div>
+        </div>
       </div>
-    
     </div>
   );
 };
