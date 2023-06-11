@@ -18,6 +18,7 @@ import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods';
 import ManageBuys from './Components/Pages/Dashboard/ManageBuy/ManageBuys';
 import Members from './Components/Pages/Dashboard/Member/Members';
+import MyBookings from "./Components/Pages/Dashboard/My Booking/MyBookings";
 import BookBlood from './Components/Pages/Home/Book Blood/BookBlood';
 import OurMembers from './Components/Pages/OurMembers/OurMembers';
 AOS.init();
@@ -31,22 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<AboutUs />}></Route>
-        <Route
-          path="/ourMembers"
-          element={
-            <RequireAuth>
-              <OurMembers />
-            </RequireAuth>
-          }
-        ></Route>
-        <Route
-          path="/bloodExchange"
-          element={
-            <RequireAuth>
-              <BloodExchange />
-            </RequireAuth>
-          }
-        ></Route>
+
         <Route
           path="/book/:id"
           element={
@@ -68,7 +54,31 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Members />} />
+          <Route index element={<OurMembers />} />
+          <Route
+            path="bloodExchange"
+            element={
+              <RequireAuth>
+                <BloodExchange />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="manageMember"
+            element={
+              <RequireAuth>
+                <Members />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="myBooking"
+            element={
+              <RequireAuth>
+                <MyBookings />
+              </RequireAuth>
+            }
+          ></Route>
           <Route path="manageBlood" element={<ManageBloods />} />
           <Route path="manageBuy" element={<ManageBuys />} />
         </Route>

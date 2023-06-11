@@ -63,7 +63,7 @@ const Navbar = () => {
                 : ''
             }
           >
-            <Link to="/ourMembers" className="font-bold  text-lg ">
+            <Link to="/dashboard" className="font-bold  text-lg ">
               Members
             </Link>
           </li>

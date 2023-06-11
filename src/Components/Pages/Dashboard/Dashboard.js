@@ -43,7 +43,7 @@ const Dashboard = () => {
                 }
               >
                 <Link
-                  to="/dashboard"
+                  to="/dashboard/manageMember"
                   className="font-bold  text-xl hover:text-green-300"
                 >
                   Manage Member
@@ -80,6 +80,21 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li
+                onClick={() => setSelectedButton('Button 5')}
+                className={
+                  selectedButton === 'Button 5'
+                    ? 'bg-primary text-white rounded-lg mt-3'
+                    : 'mt-3'
+                }
+              >
+                <Link
+                  to="/dashboard/myBooking"
+                  className="font-bold  text-xl hover:text-green-300"
+                >
+                  My Booking
+                </Link>
+              </li>
+              <li
                 onClick={() => setSelectedButton('Button 4')}
                 className={
                   selectedButton === 'Button 4'
@@ -94,21 +109,7 @@ const Dashboard = () => {
                   Blood Exchange
                 </Link>
               </li>
-              <li
-                onClick={() => setSelectedButton('Button 5')}
-                className={
-                  selectedButton === 'Button 5'
-                    ? 'bg-primary text-white rounded-lg mt-3'
-                    : 'mt-3'
-                }
-              >
-                <Link
-                  to="/dashboard/bloodExchange"
-                  className="font-bold  text-xl hover:text-green-300"
-                >
-                  My Booking
-                </Link>
-              </li>
+
               <li
                 onClick={() => setSelectedButton('Button 6')}
                 className={
