@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyBooking = ({ buy, index, handleRemove }) => {
+const MyBooking = ({ buy, index, handleRemove, handlePayment }) => {
   return (
     <tr>
       <th>{index}</th>
@@ -14,7 +14,7 @@ const MyBooking = ({ buy, index, handleRemove }) => {
       <td>{buy?.address}</td>
 
       <td>
-        {buy?.delivered ? (
+        {/* {buy?.delivered ? (
           <button
             disabled
             // onClick={() => handleDelivered(buy?._id)}
@@ -22,14 +22,14 @@ const MyBooking = ({ buy, index, handleRemove }) => {
           >
             Payment
           </button>
-        ) : (
-          <button
-            // onClick={() => handleDelivered(buy?._id)}
-            className="btn btn-secondary  btn-sm text-white"
-          >
-            Payment
-          </button>
-        )}
+        ) : ( */}
+        <button
+          onClick={() => handlePayment(buy?._id)}
+          className="btn btn-secondary  btn-sm text-white"
+        >
+          Payment
+        </button>
+        {/* )} */}
       </td>
       <td>
         {' '}

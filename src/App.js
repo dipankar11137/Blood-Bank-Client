@@ -19,6 +19,7 @@ import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods
 import ManageBuys from './Components/Pages/Dashboard/ManageBuy/ManageBuys';
 import Members from './Components/Pages/Dashboard/Member/Members';
 import MyBookings from "./Components/Pages/Dashboard/My Booking/MyBookings";
+import Payment from './Components/Pages/Dashboard/My Booking/Payment/Payment';
 import BookBlood from './Components/Pages/Home/Book Blood/BookBlood';
 import OurMembers from './Components/Pages/OurMembers/OurMembers';
 AOS.init();
@@ -38,6 +39,14 @@ function App() {
           element={
             <RequireAuth>
               <BookBlood />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/payment/:id"
+          element={
+            <RequireAuth>
+              <Payment />
             </RequireAuth>
           }
         ></Route>

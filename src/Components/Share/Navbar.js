@@ -55,7 +55,7 @@ const Navbar = () => {
 
       {user && (
         <>
-          <li
+          {/* <li
             onClick={() => setSelectedButton('Button 4')}
             className={
               selectedButton === 'Button 4'
@@ -66,7 +66,7 @@ const Navbar = () => {
             <Link to="/dashboard" className="font-bold  text-lg ">
               Members
             </Link>
-          </li>
+          </li> */}
 
           <li
             onClick={() => setSelectedButton('Button 7')}
@@ -107,7 +107,7 @@ const Navbar = () => {
   );
   return (
     <div
-      className="pl-20 bg-accent"
+      className="px-20 bg-accent"
       style={{
         background: `url("https://wallpapers.com/images/hd/blood-aesthetic-1920-x-1080-z8u95yfxdo0uopvb.jpg")`,
         backgroundSize: 'cover',

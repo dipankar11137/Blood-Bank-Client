@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../../../firebase.init';
 import MyBooking from './MyBooking';
 
 const MyBookings = () => {
+  const [user] = useAuthState(auth);
+  const email = user?.email;
   const [buys, setBuys] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:5000/buyBlood`)
+    fetch(`http://localhost:5000/buyBlood/${email}`)
       .then(res => res.json())
       .then(data => setBuys(data));
-  }, [buys]);
+  }, [buys, email]);
 
   //  const handleDelivered = id => {
   //    const updateDelivered = { delivered: true };
@@ -24,6 +30,10 @@ const MyBookings = () => {
   //        toast.success('Successfully Delivered  Blood ');
   //      });
   //  };
+
+  const handlePayment = id => {
+    navigate(`/payment/${id}`);
+  };
 
   const handleRemove = id => {
     const proceed = window.confirm('Are You Sure ?');
@@ -67,6 +77,7 @@ const MyBookings = () => {
                 buy={buy}
                 index={index + 1}
                 handleRemove={handleRemove}
+                handlePayment={handlePayment}
               ></MyBooking>
             ))}
           </tbody>
