@@ -94,7 +94,7 @@ const Dashboard = () => {
                   My Booking
                 </Link>
               </li>
-              <li
+              {/* <li
                 onClick={() => setSelectedButton('Button 4')}
                 className={
                   selectedButton === 'Button 4'
@@ -108,7 +108,7 @@ const Dashboard = () => {
                 >
                   Blood Exchange
                 </Link>
-              </li>
+              </li> */}
 
               <li
                 onClick={() => setSelectedButton('Button 6')}
