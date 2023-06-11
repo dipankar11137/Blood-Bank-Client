@@ -27,15 +27,26 @@ const Payment = () => {
     setVCode(true);
   };
   const handleVCode = () => {
-    toast.success('Payment Successfully');
-    navigation('/dashboard/myBooking');
+    const updatePayment = { payment: true };
+    fetch(`http://localhost:5000/buyBloodPayment/${id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updatePayment),
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success('Payment Successfully');
+        navigation('/dashboard/myBooking');
+      });
   };
   const handleCancel = () => {
     toast.error('Payment Cancel');
     navigation('/dashboard/myBooking');
   };
   return (
-    <div className="flex justify-center mt-5">
+    <div className="flex justify-center mt-5 pb-20">
       <div>
         <div className="bg-pink-700 w-[500px] h-[650px]">
           <img
