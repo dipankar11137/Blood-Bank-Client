@@ -15,7 +15,7 @@ const MyBooking = ({ buy, index, handleRemove, handlePayment }) => {
 
       <td>
         {buy?.payment ? (
-          <h1 className="font-bold text-orange-600 text-xl">Paid</h1>
+          <h1 className="font-extrabold text-orange-600 text-xl">Paid</h1>
         ) : (
           <button
             onClick={() => handlePayment(buy?._id)}
