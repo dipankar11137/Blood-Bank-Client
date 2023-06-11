@@ -14,7 +14,7 @@ const ManageBuy = ({ index, buy, handleDelivered, handleDelete }) => {
       <td>{buy?.address}</td>
 
       <td>
-        {buy?.payment ? (
+        {buy?.status === 'Free' ? (
           <>
             {' '}
             {buy?.delivered ? (
@@ -35,7 +35,32 @@ const ManageBuy = ({ index, buy, handleDelivered, handleDelete }) => {
             )}
           </>
         ) : (
-          <h1 className="text-xl text-primary font-extrabold">Not Paid</h1>
+          <>
+            {' '}
+            {buy?.payment ? (
+              <>
+                {' '}
+                {buy?.delivered ? (
+                  <button
+                    disabled
+                    onClick={() => handleDelivered(buy?._id)}
+                    className="btn btn-secondary  btn-sm text-white"
+                  >
+                    Delivered
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleDelivered(buy?._id)}
+                    className="btn btn-primary  btn-sm text-white"
+                  >
+                    Delivered
+                  </button>
+                )}
+              </>
+            ) : (
+              <h1 className="text-xl text-primary font-extrabold">Not Paid</h1>
+            )}
+          </>
         )}
       </td>
       <td>
