@@ -8,7 +8,14 @@ const ManageBuy = ({ index, buy, handleDelivered, handleDelete }) => {
       <td>{buy?.user?.studentId}</td>
       <td>{buy?.bloodGroup}</td>
       <td>{buy?.quantity}</td>
-      <td>{buy?.totalPrice}</td>
+      <td>
+        {' '}
+        {buy?.status === 'Free' ? (
+          <h1 className="text-xl font-bold text-blue-800">Free</h1>
+        ) : (
+          <>{buy?.totalPrice}</>
+        )}{' '}
+      </td>
       <td>{buy?.date}</td>
       <td>{buy?.phone}</td>
       <td>{buy?.address}</td>

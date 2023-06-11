@@ -14,15 +14,22 @@ const MyBooking = ({ buy, index, handleRemove, handlePayment }) => {
       <td>{buy?.address}</td>
 
       <td>
-        {buy?.payment ? (
-          <h1 className="font-extrabold text-orange-600 text-xl">Paid</h1>
+        {buy?.status === 'Free' ? (
+          <h1 className="font-extrabold text-blue-600 text-xl"> Free</h1>
         ) : (
-          <button
-            onClick={() => handlePayment(buy?._id)}
-            className="btn btn-secondary  btn-sm text-white"
-          >
-            Payment
-          </button>
+          <>
+            {' '}
+            {buy?.payment ? (
+              <h1 className="font-extrabold text-orange-600 text-xl">Paid</h1>
+            ) : (
+              <button
+                onClick={() => handlePayment(buy?._id)}
+                className="btn btn-secondary  btn-sm text-white"
+              >
+                Payment
+              </button>
+            )}
+          </>
         )}
       </td>
       <td>
