@@ -1,7 +1,7 @@
 import React from "react";
 import "../../CSS/PicStyle.css";
 
-const Blood = ({ blood, handleBook }) => {
+const Blood = ({ blood, handleBook, role, handleFree }) => {
   return (
     <div
       data-aos="flip-up"
@@ -21,15 +21,32 @@ const Blood = ({ blood, handleBook }) => {
           Blood Group : {blood?.name}
         </h2>
         <p className="text-xl font-semibold">Quantity : {blood?.quantity}</p>
-        <p className="text-xl font-semibold">Price : ${blood?.price}</p>
-        <div className="card-actions justify-end">
-          <button
-            onClick={() => handleBook(blood?._id)}
-            className="btn btn-primary text-white text-xl pic-style"
-          >
-            Buy Now
-          </button>
-        </div>
+        <p className="text-xl font-semibold mb-3">Price : ${blood?.price}</p>
+        {role ? (
+          <div className="card-actions justify-between">
+            <button
+              onClick={() => handleFree(blood?._id)}
+              className="btn btn-secondary text-white text-xl pic-style"
+            >
+              Free 1 Bug
+            </button>
+            <button
+              onClick={() => handleBook(blood?._id)}
+              className="btn btn-primary text-white text-xl pic-style"
+            >
+              Buy Now
+            </button>
+          </div>
+        ) : (
+          <div className="card-actions justify-end">
+            <button
+              onClick={() => handleBook(blood?._id)}
+              className="btn btn-primary text-white text-xl pic-style"
+            >
+              Buy Now
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

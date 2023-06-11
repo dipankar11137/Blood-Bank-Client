@@ -21,6 +21,7 @@ import Members from './Components/Pages/Dashboard/Member/Members';
 import MyBookings from "./Components/Pages/Dashboard/My Booking/MyBookings";
 import Payment from './Components/Pages/Dashboard/My Booking/Payment/Payment';
 import BookBlood from './Components/Pages/Home/Book Blood/BookBlood';
+import FreeBook from './Components/Pages/Home/Book Blood/FreeBook';
 import OurMembers from './Components/Pages/OurMembers/OurMembers';
 AOS.init();
 
@@ -39,6 +40,14 @@ function App() {
           element={
             <RequireAuth>
               <BookBlood />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/freeBook/:id"
+          element={
+            <RequireAuth>
+              <FreeBook />
             </RequireAuth>
           }
         ></Route>
