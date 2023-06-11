@@ -1,7 +1,7 @@
 import React from "react";
 import "../../CSS/PicStyle.css";
 
-const Blood = ({ blood, handleBook, role, handleFree }) => {
+const Blood = ({ blood, handleBook, role, handleFree, freeBlood }) => {
   return (
     <div
       data-aos="flip-up"
@@ -24,12 +24,24 @@ const Blood = ({ blood, handleBook, role, handleFree }) => {
         <p className="text-xl font-semibold mb-3">Price : ${blood?.price}</p>
         {role ? (
           <div className="card-actions justify-between">
-            <button
-              onClick={() => handleFree(blood?._id)}
-              className="btn btn-secondary text-white text-xl pic-style"
-            >
-              Free 1 Bug
-            </button>
+            <>
+              {freeBlood ? (
+                <button
+                  disabled
+                  onClick={() => handleFree(blood?._id)}
+                  className="btn btn-secondary text-white text-xl pic-style"
+                >
+                  Free 1 Bug
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleFree(blood?._id)}
+                  className="btn btn-secondary text-white text-xl pic-style"
+                >
+                  Free 1 Bug
+                </button>
+              )}
+            </>
             <button
               onClick={() => handleBook(blood?._id)}
               className="btn btn-primary text-white text-xl pic-style"

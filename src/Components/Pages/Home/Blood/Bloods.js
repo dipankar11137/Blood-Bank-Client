@@ -22,6 +22,7 @@ const Bloods = () => {
   }, [user, email]);
 
   const role = user[0]?.role;
+  const freeBlood = user[0]?.freeBlood;
   const handleBook = id => {
     navigation(`/book/${id}`);
   };
@@ -41,6 +42,7 @@ const Bloods = () => {
             handleBook={handleBook}
             handleFree={handleFree}
             role={role}
+            freeBlood={freeBlood}
           ></Blood>
         ))}
       </div>
