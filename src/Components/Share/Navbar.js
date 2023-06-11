@@ -35,7 +35,7 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/" className="font-bold  text-xl ">
+        <Link to="/" className="font-bold  text-lg ">
           Home
         </Link>
       </li>
@@ -48,7 +48,7 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/blog" className="font-bold  text-xl ">
+        <Link to="/blog" className="font-bold  text-lg ">
           Blog
         </Link>
       </li> */}
@@ -63,10 +63,11 @@ const Navbar = () => {
                 : ''
             }
           >
-            <Link to="/ourMembers" className="font-bold  text-xl ">
+            <Link to="/ourMembers" className="font-bold  text-lg ">
               Members
             </Link>
           </li>
+
           <li
             onClick={() => setSelectedButton('Button 7')}
             className={
@@ -75,10 +76,11 @@ const Navbar = () => {
                 : ''
             }
           >
-            <Link to="/dashboard" className="font-bold  text-xl ">
+            <Link to="/dashboard" className="font-bold  text-lg ">
               Dashboard
             </Link>
           </li>
+
           <li
             onClick={() => setSelectedButton('Button 5')}
             className={
@@ -87,7 +89,7 @@ const Navbar = () => {
                 : ''
             }
           >
-            <Link to="/about" className="font-bold  text-xl ">
+            <Link to="/about" className="font-bold  text-lg ">
               About Us
             </Link>
           </li>
@@ -105,7 +107,7 @@ const Navbar = () => {
   );
   return (
     <div
-      className="px-20 bg-accent"
+      className="pl-20 bg-accent"
       style={{
         background: `url("https://wallpapers.com/images/hd/blood-aesthetic-1920-x-1080-z8u95yfxdo0uopvb.jpg")`,
         backgroundSize: 'cover',
@@ -133,7 +135,7 @@ const Navbar = () => {
             </label>
             <ul
               tabindex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-neutral"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-amber-400 rounded-box w-72  text-neutral"
             >
               {menuItem}
             </ul>
@@ -153,7 +155,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal p-0 font-bold text-xl hover:bg-se">
+          <ul class="menu menu-horizontal p-0 font-bold text-lg hover:bg-se">
             {menuItem}
           </ul>
         </div>

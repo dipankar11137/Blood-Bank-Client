@@ -13,6 +13,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import RequireAuth from './Components/Login/RequireAUth';
 import AboutUs from './Components/Pages/About Us/AboutUs';
+import BloodExchange from './Components/Pages/Blood Exchange/BloodExchange';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods';
 import ManageBuys from './Components/Pages/Dashboard/ManageBuy/ManageBuys';
@@ -35,6 +36,14 @@ function App() {
           element={
             <RequireAuth>
               <OurMembers />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/bloodExchange"
+          element={
+            <RequireAuth>
+              <BloodExchange />
             </RequireAuth>
           }
         ></Route>

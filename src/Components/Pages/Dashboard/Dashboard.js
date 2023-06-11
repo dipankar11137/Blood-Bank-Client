@@ -31,6 +31,21 @@ const Dashboard = () => {
                   to="/dashboard"
                   className="font-bold  text-xl hover:text-green-300"
                 >
+                  Member
+                </Link>
+              </li>
+              <li
+                onClick={() => setSelectedButton('Button 0')}
+                className={
+                  selectedButton === 'Button 0'
+                    ? 'bg-primary text-white rounded-lg'
+                    : ''
+                }
+              >
+                <Link
+                  to="/dashboard"
+                  className="font-bold  text-xl hover:text-green-300"
+                >
                   Manage Member
                 </Link>
               </li>
@@ -62,6 +77,51 @@ const Dashboard = () => {
                   className="font-bold  text-xl hover:text-green-300"
                 >
                   Manage Buy
+                </Link>
+              </li>
+              <li
+                onClick={() => setSelectedButton('Button 4')}
+                className={
+                  selectedButton === 'Button 4'
+                    ? 'bg-primary text-white rounded-lg mt-3'
+                    : 'mt-3'
+                }
+              >
+                <Link
+                  to="/dashboard/bloodExchange"
+                  className="font-bold  text-xl hover:text-green-300"
+                >
+                  Blood Exchange
+                </Link>
+              </li>
+              <li
+                onClick={() => setSelectedButton('Button 5')}
+                className={
+                  selectedButton === 'Button 5'
+                    ? 'bg-primary text-white rounded-lg mt-3'
+                    : 'mt-3'
+                }
+              >
+                <Link
+                  to="/dashboard/bloodExchange"
+                  className="font-bold  text-xl hover:text-green-300"
+                >
+                  My Booking
+                </Link>
+              </li>
+              <li
+                onClick={() => setSelectedButton('Button 6')}
+                className={
+                  selectedButton === 'Button 6'
+                    ? 'bg-primary text-white rounded-lg mt-3'
+                    : 'mt-3'
+                }
+              >
+                <Link
+                  to="/dashboard/bloodExchange"
+                  className="font-bold  text-xl hover:text-green-300"
+                >
+                  Donate Blood
                 </Link>
               </li>
             </ul>
