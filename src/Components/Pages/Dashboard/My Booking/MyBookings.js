@@ -16,21 +16,6 @@ const MyBookings = () => {
       .then(data => setBuys(data));
   }, [buys, email]);
 
-  //  const handleDelivered = id => {
-  //    const updateDelivered = { delivered: true };
-  //    fetch(`http://localhost:5000/buyBloodId/${id}`, {
-  //      method: 'PUT',
-  //      headers: {
-  //        'content-type': 'application/json',
-  //      },
-  //      body: JSON.stringify(updateDelivered),
-  //    })
-  //      .then(res => res.json())
-  //      .then(data => {
-  //        toast.success('Successfully Delivered  Blood ');
-  //      });
-  //  };
-
   const handlePayment = id => {
     navigate(`/payment/${id}`);
   };

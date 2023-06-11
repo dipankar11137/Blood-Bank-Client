@@ -26,13 +26,30 @@ const FreeBook = () => {
       .then(data => setUsers(data));
   }, [users, email]);
 
-  // console.log(email);
+  const updateId = users[0]?._id;
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
   } = useForm();
+
+  const handleFree = () => {
+    const updateFreeBlood = { freeBlood: true };
+    fetch(`http://localhost:5000/userId/${updateId}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updateFreeBlood),
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success(' Successfully Book this Blood');
+        reset();
+        navigator('/');
+      });
+  };
   const onSubmit = data => {
     const changeUrl = {
       ...data,
@@ -55,14 +72,12 @@ const FreeBook = () => {
     })
       .then(res => res.json())
       .then(result => {
-        toast.success(' Successfully Book this Blood');
-        reset();
-        navigator('/');
+        handleFree();
       });
   };
   return (
     <div>
-      <div className="bg-gradient-to-r from-red-100 to-green-100 pb-20">
+      <div className="bg-gradient-to-r from-red-100 to-green-100 pb-40">
         <h2 className="pt-5  font-bold text-4xl text-center  uppercase mb-5">
           Free Blood
         </h2>
