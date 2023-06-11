@@ -14,22 +14,16 @@ const MyBooking = ({ buy, index, handleRemove, handlePayment }) => {
       <td>{buy?.address}</td>
 
       <td>
-        {/* {buy?.delivered ? (
+        {buy?.payment ? (
+          <h1 className="font-bold text-orange-600 text-xl">Paid</h1>
+        ) : (
           <button
-            disabled
-            // onClick={() => handleDelivered(buy?._id)}
+            onClick={() => handlePayment(buy?._id)}
             className="btn btn-secondary  btn-sm text-white"
           >
             Payment
           </button>
-        ) : ( */}
-        <button
-          onClick={() => handlePayment(buy?._id)}
-          className="btn btn-secondary  btn-sm text-white"
-        >
-          Payment
-        </button>
-        {/* )} */}
+        )}
       </td>
       <td>
         {' '}
