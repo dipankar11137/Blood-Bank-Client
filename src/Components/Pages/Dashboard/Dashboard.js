@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import Footer from '../../Share/Footer';
 
 const Dashboard = () => {
-  const [selectedButton, setSelectedButton] = useState('Button 1');
+  const [selectedButton, setSelectedButton] = useState('');
   return (
     <div className="bg-gradient-to-r from-red-300 to-green-300">
       <div>
