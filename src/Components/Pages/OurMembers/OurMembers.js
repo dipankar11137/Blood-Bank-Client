@@ -17,7 +17,14 @@ const OurMembers = () => {
           {/* head */}
           <thead>
             <tr className="text-center text-white">
-              <th className="text-xl bg-blue-900">Index</th>
+              <th className="text-xl bg-blue-900">Index </th>
+              <th className="text-xl bg-blue-900">Name</th>
+              <th className="text-xl bg-blue-900">Student Id</th>
+              <th className="text-xl bg-blue-900">Blood Group</th>
+              <th className="text-xl bg-blue-900">Member</th>
+            </tr>
+            <tr className="text-center text-white">
+              <th className="text-xl bg-blue-900">Index </th>
               <th className="text-xl bg-blue-900">Name</th>
               <th className="text-xl bg-blue-900">Student Id</th>
               <th className="text-xl bg-blue-900">Blood Group</th>
