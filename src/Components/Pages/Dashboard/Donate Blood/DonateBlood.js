@@ -8,6 +8,8 @@ const DonateBlood = () => {
   const email = user.email;
   const [users, setUsers] = useState([]);
   const userOne = users[0];
+  // console.log(userOne);
+  const [time, setTime] = useState('');
   const {
     register,
     formState: { errors },
@@ -19,7 +21,19 @@ const DonateBlood = () => {
       .then(res => res.json())
       .then(data => setUsers(data));
   }, [users, email]);
-  const onSubmit = () => {};
+  const onSubmit = data => {
+    const updateData = {
+      ...data,
+      time,
+      bloodGroup: userOne?.bloodGroup,
+      email: userOne?.email,
+      freeBlood: userOne?.freeBlood,
+      name: userOne?.name,
+      role: userOne?.role,
+      studentId: userOne?.studentId,
+    };
+    console.log(updateData);
+  };
   return (
     <div>
       <div className="bg-gradient-to-r from-red-100 to-green-100 pb-40">
@@ -63,11 +77,36 @@ const DonateBlood = () => {
                   </span>
                 )}
               </label>
+              {/* age */}
+              <label className="label  text-xl font-semibold">
+                <span className="label-text text-white text-xl">Weight</span>
+              </label>
+              <input
+                type="number"
+                placeholder="Write Your Weight"
+                className="input input-bordered bg-white w-full   hover:shadow-xl shadow-inner"
+                {...register('weight', {
+                  required: {
+                    value: true,
+                    message: 'Weight is Required',
+                  },
+                })}
+              />
+              <label className="label">
+                {errors.weight?.type === 'required' && (
+                  <span className="label-text-alt text-xl text-red-400">
+                    {errors?.weight?.message}
+                  </span>
+                )}
+              </label>
               {/* Tile */}
               <label className="label  text-xl font-semibold">
                 <span className="label-text text-white text-xl">Time</span>
               </label>
-              <select className="select select-secondary w-full text-xl">
+              <select
+                onClick={e => setTime(e.target.value)}
+                className="select select-secondary w-full text-xl"
+              >
                 <option disabled selected>
                   Pick Up Your Time
                 </option>
