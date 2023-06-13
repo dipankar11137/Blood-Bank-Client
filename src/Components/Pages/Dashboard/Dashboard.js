@@ -80,6 +80,21 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li
+                onClick={() => setSelectedButton('Button 9')}
+                className={
+                  selectedButton === 'Button 9'
+                    ? 'bg-primary text-white rounded-lg mt-3'
+                    : 'mt-3'
+                }
+              >
+                <Link
+                  to="/dashboard/manageDonateBlood"
+                  className="font-bold  text-xl hover:text-green-300 "
+                >
+                  Manage Donate Blood
+                </Link>
+              </li>
+              <li
                 onClick={() => setSelectedButton('Button 5')}
                 className={
                   selectedButton === 'Button 5'

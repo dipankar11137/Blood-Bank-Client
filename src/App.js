@@ -17,6 +17,7 @@ import BloodExchange from './Components/Pages/Blood Exchange/BloodExchange';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import DonateBlood from './Components/Pages/Dashboard/Donate Blood/DonateBlood';
 import ManageBloods from './Components/Pages/Dashboard/Manage Blood/ManageBloods';
+import ManageDonateBloods from './Components/Pages/Dashboard/Manage Donate Blood/ManageDonateBloods';
 import ManageBuys from './Components/Pages/Dashboard/ManageBuy/ManageBuys';
 import Members from './Components/Pages/Dashboard/Member/Members';
 import MyBookings from "./Components/Pages/Dashboard/My Booking/MyBookings";
@@ -103,6 +104,14 @@ function App() {
             element={
               <RequireAuth>
                 <DonateBlood />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="manageDonateBlood"
+            element={
+              <RequireAuth>
+                <ManageDonateBloods />
               </RequireAuth>
             }
           ></Route>
