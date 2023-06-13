@@ -32,6 +32,7 @@ const DonateBlood = () => {
       name: userOne?.name,
       role: userOne?.role,
       studentId: userOne?.studentId,
+      accept: false,
     };
     fetch(`http://localhost:5000/donateBlood/${userOne?.email}`, {
       method: 'PUT',
