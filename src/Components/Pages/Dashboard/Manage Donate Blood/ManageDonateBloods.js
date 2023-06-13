@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import ManageDonateBlood from './ManageDonateBlood';
 
 const ManageDonateBloods = () => {
@@ -8,7 +9,21 @@ const ManageDonateBloods = () => {
       .then(res => res.json())
       .then(data => setMBloods(data));
   }, [mBloods]);
-  const handleDelete = id => {};
+  const handleDelete = id => {
+    const proceed = window.confirm('Are You Sure ?');
+    if (proceed) {
+      const url = `http://localhost:5000/donateBlood/${id}`;
+      fetch(url, {
+        method: 'DELETE',
+      })
+        .then(res => res.json())
+        .then(data => {
+          const remaining = mBloods.filter(product => product._id !== id);
+          setMBloods(remaining);
+          toast.success('Successfully Delete');
+        });
+    }
+  };
   return (
     <div>
       <div className="overflow-x-auto">
