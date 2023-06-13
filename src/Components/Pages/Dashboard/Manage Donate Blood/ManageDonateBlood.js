@@ -15,13 +15,16 @@ const ManageDonateBlood = ({ mBlood, index, handleDelete, handleAccept }) => {
       <td>{mBlood?.address}</td>
 
       <td>
-        {' '}
-        <button
-          onClick={() => handleAccept(mBlood?._id)}
-          className="btn btn-secondary  btn-sm text-white pt-1 pic-style"
-        >
-          Accept
-        </button>
+        {mBlood?.accept ? (
+          <h1 className="text-xl font-bold text-secondary">Done</h1>
+        ) : (
+          <button
+            onClick={() => handleAccept(mBlood?._id)}
+            className="btn btn-secondary  btn-sm text-white pt-1 pic-style"
+          >
+            Accept
+          </button>
+        )}
       </td>
       <td>
         {' '}
