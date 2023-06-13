@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageDonateBlood = ({ mBlood, index, handleDelete }) => {
+const ManageDonateBlood = ({ mBlood, index, handleDelete, handleAccept }) => {
   return (
     <tr>
       <th>{index}</th>
@@ -17,7 +17,7 @@ const ManageDonateBlood = ({ mBlood, index, handleDelete }) => {
       <td>
         {' '}
         <button
-          // onClick={() => handleAccept(mBlood?._id)}
+          onClick={() => handleAccept(mBlood?._id)}
           className="btn btn-secondary  btn-sm text-white pt-1 pic-style"
         >
           Accept
