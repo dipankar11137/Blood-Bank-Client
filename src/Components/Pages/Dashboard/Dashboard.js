@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import Footer from '../../Share/Footer';
 
 const Dashboard = () => {
+  const [user] = useAuthState(auth);
   const [selectedButton, setSelectedButton] = useState('');
   return (
     <div className="bg-gradient-to-r from-red-300 to-green-300">
@@ -34,66 +37,70 @@ const Dashboard = () => {
                   Member
                 </Link>
               </li>
-              <li
-                onClick={() => setSelectedButton('Button 0')}
-                className={
-                  selectedButton === 'Button 0'
-                    ? 'bg-primary text-white rounded-lg'
-                    : ''
-                }
-              >
-                <Link
-                  to="/dashboard/manageMember"
-                  className="font-bold  text-xl hover:text-green-300"
-                >
-                  Manage Member
-                </Link>
-              </li>
-              <li
-                onClick={() => setSelectedButton('Button 2')}
-                className={
-                  selectedButton === 'Button 2'
-                    ? 'bg-primary text-white rounded-lg mt-3'
-                    : 'mt-3'
-                }
-              >
-                <Link
-                  to="/dashboard/manageBlood"
-                  className="font-bold  text-xl hover:text-green-300"
-                >
-                  Manage Blood
-                </Link>
-              </li>
-              <li
-                onClick={() => setSelectedButton('Button 3')}
-                className={
-                  selectedButton === 'Button 3'
-                    ? 'bg-primary text-white rounded-lg mt-3'
-                    : 'mt-3'
-                }
-              >
-                <Link
-                  to="/dashboard/manageBuy"
-                  className="font-bold  text-xl hover:text-green-300"
-                >
-                  Manage Buy
-                </Link>
-              </li>
-              <li
-                onClick={() => setSelectedButton('Button 9')}
-                className={
-                  selectedButton === 'Button 9'
-                    ? 'bg-primary text-white rounded-lg mt-3'
-                    : 'mt-3'
-                }
-              >
-                <Link
-                  to="/dashboard/manageDonateBlood"
-                  className="font-bold  text-xl hover:text-green-300 "
-                >
-                  Manage Donate Blood
-                </Link>
-              </li>
+              {user?.email === 'abc@def.com' && (
+                <>
+                  <li
+                    onClick={() => setSelectedButton('Button 0')}
+                    className={
+                      selectedButton === 'Button 0'
+                        ? 'bg-primary text-white rounded-lg'
+                        : ''
+                    }
+                  >
+                    <Link
+                      to="/dashboard/manageMember"
+                      className="font-bold  text-xl hover:text-green-300"
+                    >
+                      Manage Member
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setSelectedButton('Button 2')}
+                    className={
+                      selectedButton === 'Button 2'
+                        ? 'bg-primary text-white rounded-lg mt-3'
+                        : 'mt-3'
+                    }
+                  >
+                    <Link
+                      to="/dashboard/manageBlood"
+                      className="font-bold  text-xl hover:text-green-300"
+                    >
+                      Manage Blood
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setSelectedButton('Button 3')}
+                    className={
+                      selectedButton === 'Button 3'
+                        ? 'bg-primary text-white rounded-lg mt-3'
+                        : 'mt-3'
+                    }
+                  >
+                    <Link
+                      to="/dashboard/manageBuy"
+                      className="font-bold  text-xl hover:text-green-300"
+                    >
+                      Manage Buy
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setSelectedButton('Button 9')}
+                    className={
+                      selectedButton === 'Button 9'
+                        ? 'bg-primary text-white rounded-lg mt-3'
+                        : 'mt-3'
+                    }
+                  >
+                    <Link
+                      to="/dashboard/manageDonateBlood"
+                      className="font-bold  text-xl hover:text-green-300 "
+                    >
+                      Manage Donate Blood
+                    </Link>
+                  </li>
+                </>
+              )}
               <li
                 onClick={() => setSelectedButton('Button 5')}
                 className={
@@ -109,21 +116,6 @@ const Dashboard = () => {
                   My Booking
                 </Link>
               </li>
-              {/* <li
-                onClick={() => setSelectedButton('Button 4')}
-                className={
-                  selectedButton === 'Button 4'
-                    ? 'bg-primary text-white rounded-lg mt-3'
-                    : 'mt-3'
-                }
-              >
-                <Link
-                  to="/dashboard/bloodExchange"
-                  className="font-bold  text-xl hover:text-green-300"
-                >
-                  Blood Exchange
-                </Link>
-              </li> */}
 
               <li
                 onClick={() => setSelectedButton('Button 6')}
