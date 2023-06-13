@@ -119,7 +119,7 @@ const Dashboard = () => {
                 }
               >
                 <Link
-                  to="/dashboard/bloodExchange"
+                  to="/dashboard/donateBlood"
                   className="font-bold  text-xl hover:text-green-300"
                 >
                   Donate Blood

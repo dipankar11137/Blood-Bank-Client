@@ -192,24 +192,6 @@ const OurTeams = () => {
               <h2 className="text-center text-xl font-semibold">Employee</h2>
             </div>
           </div>
-          {/*  */}
-          <div
-            data-aos="flip-left"
-            data-aos-easing="linear"
-            data-aos-duration="1500"
-            className="card w-56 bg-base-100 text-black  mt-2 mb-3  shadow-2xl  hover:shadow-lg"
-          >
-            <figure>
-              <img
-                className="w-full  pic-style rounded-lg h-[200px]"
-                src="https://cdn-headshots.theathletic.com/soccer/TX7pFeb0aiHzuvjI_400x400.png"
-                alt="ac"
-              />
-            </figure>
-            <div className="pb-2 px-2 mt-5">
-              <h2 className="text-center text-xl font-semibold">yello</h2>
-            </div>
-          </div>
         </Carousel>
       </div>
     </div>
