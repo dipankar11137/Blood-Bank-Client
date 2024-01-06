@@ -1,11 +1,10 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import call from "../../../../Images/Image/call cartoon.png";
-import RequestToContact from "./RequestToContact";
+import call from '../../../../Images/Image/call cartoon.png';
 
 const Contact = () => {
   return (
-    <div className="bg-slate-100 mt-40 shadow-lg">
+    <div className="bg-accent mt-40 shadow-lg text-white">
       <div className=" mx-20 grid grid-cols-3 ">
         <div className="p-4 col-span-2">
           <h1 className="py-4 text-4xl font-bold">
@@ -33,7 +32,7 @@ const Contact = () => {
             data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="3000"
-            style={{ marginTop: "-120px" }}
+            style={{ marginTop: '-120px' }}
             className="h-96"
             src={call}
             alt=""

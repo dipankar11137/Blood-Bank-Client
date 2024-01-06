@@ -40,34 +40,8 @@ const Navbar = () => {
         </Link>
       </li>
 
-      {/* <li
-        onClick={() => setSelectedButton('Button 2')}
-        className={
-          selectedButton === 'Button 2'
-            ? 'bg-primary text-white rounded-lg'
-            : ''
-        }
-      >
-        <Link to="/blog" className="font-bold  text-lg ">
-          Blog
-        </Link>
-      </li> */}
-
       {user && (
         <>
-          {/* <li
-            onClick={() => setSelectedButton('Button 4')}
-            className={
-              selectedButton === 'Button 4'
-                ? 'bg-primary text-white rounded-lg'
-                : ''
-            }
-          >
-            <Link to="/dashboard" className="font-bold  text-lg ">
-              Members
-            </Link>
-          </li> */}
-
           <li
             onClick={() => setSelectedButton('Button 7')}
             className={
@@ -108,11 +82,11 @@ const Navbar = () => {
   return (
     <div
       className="px-20 bg-accent"
-      style={{
-        background: `url("https://wallpapers.com/images/hd/blood-aesthetic-1920-x-1080-z8u95yfxdo0uopvb.jpg")`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }}
+      // style={{
+      //   background: `url("https://wallpapers.com/images/hd/blood-aesthetic-1920-x-1080-z8u95yfxdo0uopvb.jpg")`,
+      //   backgroundSize: 'cover',
+      //   backgroundRepeat: 'no-repeat',
+      // }}
     >
       <div class="navbar px-12 mx-auto text-white shadow-2xl  rounded-lg">
         <div class="navbar-start">

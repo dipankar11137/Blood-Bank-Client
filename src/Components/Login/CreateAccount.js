@@ -24,6 +24,7 @@ const CreateAccount = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
   const location = useLocation();
+  const [student, setStudent] = useState('');
 
   let from = location.state?.from?.pathname || '/';
 
@@ -137,29 +138,62 @@ const CreateAccount = () => {
                 </label>
               </div>
               {/* Student Id */}
-              <div className="form-control w-full  ">
-                <label className="label">
-                  <span className="label-text text-white">Student Id</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Your Student Id"
-                  className="input input-bordered bg-white w-full  "
-                  {...register('studentId', {
-                    required: {
-                      value: true,
-                      message: 'Student Id is Required',
-                    },
-                  })}
-                />
-                <label className="label">
-                  {errors.studentId?.type === 'required' && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.studentId.message}
-                    </span>
-                  )}
-                </label>
-              </div>
+              {student === 'Student' ? (
+                <div className="form-control mb-3">
+                  <label
+                    onClick={() => setStudent('')}
+                    className="flex items-center gap-3  cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="radio-10"
+                      className="radio checked:bg-blue-500 bg-white"
+                    />
+                    <span className="text-white ">Not a Student</span>
+                  </label>
+                </div>
+              ) : (
+                <div className="form-control mb-3">
+                  <label
+                    onClick={() => setStudent('Student')}
+                    className=" flex items-center gap-3 cursor-pointer "
+                  >
+                    <input
+                      type="radio"
+                      name="radio-10"
+                      className="radio checked:bg-red-500 bg-white"
+                    />
+                    <span className=" text-white">If You are a student</span>
+                  </label>
+                </div>
+              )}
+
+              {student === 'Student' && (
+                <div className="form-control w-full  ">
+                  <label className="label">
+                    <span className="label-text text-white">Student Id</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Your Student Id"
+                    className="input input-bordered bg-white w-full  "
+                    {...register('studentId', {
+                      required: {
+                        value: true,
+                        message: 'Student Id is Required',
+                      },
+                    })}
+                  />
+                  <label className="label">
+                    {errors.studentId?.type === 'required' && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.studentId.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
+              )}
+
               <div>
                 {/* Blood Group */}
                 <select
