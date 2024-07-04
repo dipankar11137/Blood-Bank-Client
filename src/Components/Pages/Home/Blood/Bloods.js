@@ -31,7 +31,7 @@ const Bloods = () => {
   };
   return (
     <div className="mt-20 mx-20 bg-slate-50 rounded-xl">
-      <h1 className="ml-5 text-7xl font-bold mb-5 pt-5">
+      <h1 className="ml-5 text-5xl font-bold mb-5 pt-5">
         Our Available Bloods
       </h1>
       <div className="grid md:grid-cols-4 sm:grid-cols-1 gap-x-4 gap-y-8 p-3">

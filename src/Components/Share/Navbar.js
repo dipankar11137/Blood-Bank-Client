@@ -35,7 +35,7 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/" className="font-bold  text-lg ">
+        <Link to="/" className="   ">
           Home
         </Link>
       </li>
@@ -50,7 +50,7 @@ const Navbar = () => {
                 : ''
             }
           >
-            <Link to="/dashboard" className="font-bold  text-lg ">
+            <Link to="/dashboard" className="   ">
               Dashboard
             </Link>
           </li>
@@ -63,7 +63,7 @@ const Navbar = () => {
                 : ''
             }
           >
-            <Link to="/about" className="font-bold  text-lg ">
+            <Link to="/about" className="   ">
               About Us
             </Link>
           </li>
@@ -117,19 +117,19 @@ const Navbar = () => {
           <Link to={'/'}>
             <div
               onClick={() => setSelectedButton('Button 1')}
-              className="btn btn-ghost text-white font-extrabold text-2xl  uppercase"
+              className="btn btn-ghost text-white font-semibold text-2xl  uppercase"
             >
               {' '}
               <BiDonateBlood
                 className="mr-4 text-primary bg-white rounded-full animate-bounce"
-                size={50}
+                size={30}
               />{' '}
               Blood Bank{' '}
             </div>
           </Link>
         </div>
         <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal p-0 font-bold text-lg hover:bg-se">
+          <ul class="menu menu-horizontal p-0  hover:bg-se">
             {menuItem}
           </ul>
         </div>

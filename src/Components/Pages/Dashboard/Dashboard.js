@@ -21,7 +21,7 @@ const Dashboard = () => {
           </div>
           <div className="drawer-side ">
             <label for="dashboard-sidebar" className="drawer-overlay "></label>
-            <ul className="menu p-4 overflow-y-auto w-64 bg-green-900  text-white pt-20 ">
+            <ul className="menu p-4 overflow-y-auto w-52 bg-green-900  text-white pt-20 ">
               <li
                 onClick={() => setSelectedButton('Button 1')}
                 className={
@@ -32,7 +32,7 @@ const Dashboard = () => {
               >
                 <Link
                   to="/dashboard"
-                  className="font-bold  text-xl hover:text-green-300"
+                  className="  hover:text-green-300"
                 >
                   Member
                 </Link>
@@ -49,7 +49,7 @@ const Dashboard = () => {
                   >
                     <Link
                       to="/dashboard/manageMember"
-                      className="font-bold  text-xl hover:text-green-300"
+                      className=" hover:text-green-300"
                     >
                       Manage Member
                     </Link>
@@ -64,7 +64,7 @@ const Dashboard = () => {
                   >
                     <Link
                       to="/dashboard/manageBlood"
-                      className="font-bold  text-xl hover:text-green-300"
+                      className=" hover:text-green-300"
                     >
                       Manage Blood
                     </Link>
@@ -79,7 +79,7 @@ const Dashboard = () => {
                   >
                     <Link
                       to="/dashboard/manageBuy"
-                      className="font-bold  text-xl hover:text-green-300"
+                      className=" hover:text-green-300"
                     >
                       Manage Buy
                     </Link>
@@ -94,7 +94,7 @@ const Dashboard = () => {
                   >
                     <Link
                       to="/dashboard/manageDonateBlood"
-                      className="font-bold  text-xl hover:text-green-300 "
+                      className=" hover:text-green-300 "
                     >
                       Manage Donate Blood
                     </Link>
@@ -111,7 +111,7 @@ const Dashboard = () => {
               >
                 <Link
                   to="/dashboard/myBooking"
-                  className="font-bold  text-xl hover:text-green-300"
+                  className=" hover:text-green-300"
                 >
                   My Booking
                 </Link>
@@ -127,7 +127,7 @@ const Dashboard = () => {
               >
                 <Link
                   to="/dashboard/donateBlood"
-                  className="font-bold  text-xl hover:text-green-300"
+                  className=" hover:text-green-300"
                 >
                   Donate Blood
                 </Link>

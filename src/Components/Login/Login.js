@@ -64,7 +64,7 @@ const Login = () => {
       className="h-screen"
     >
       <div className="flex justify-center  ">
-        <div className="flex justify-center mt-28 ">
+        <div className="flex justify-center mt-8 ">
           <div className="card w-96  bg-violet-700  shadow-2xl">
             <div className="card-body">
               <div className="flex justify-center">
