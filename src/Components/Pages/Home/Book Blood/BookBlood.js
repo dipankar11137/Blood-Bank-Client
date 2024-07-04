@@ -19,12 +19,12 @@ const BookBlood = () => {
   const totalPrice = quantity * product?.price;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/blood/${id}`)
+    fetch(`https://interective-dashboard-server.onrender.com/blood/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data));
   }, [id]);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://interective-dashboard-server.onrender.com/user/${email}`)
       .then(res => res.json())
       .then(data => setUsers(data));
   }, [users, email]);
@@ -48,7 +48,7 @@ const BookBlood = () => {
       user: userOne,
     };
     console.log(changeUrl);
-    const url = `http://localhost:5000/buyBlood`;
+    const url = `https://interective-dashboard-server.onrender.com/buyBlood`;
     fetch(url, {
       method: 'POST',
       headers: {

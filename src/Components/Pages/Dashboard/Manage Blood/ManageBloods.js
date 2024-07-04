@@ -6,12 +6,12 @@ const ManageBloods = () => {
   const [bloods, setBloods] = useState([]);
   const [singleBlood, setSingleBlood] = useState({});
   useEffect(() => {
-    fetch('http://localhost:5000/bloods')
+    fetch('https://interective-dashboard-server.onrender.com/bloods')
       .then(res => res.json())
       .then(data => setBloods(data));
   }, [bloods]);
   const handleEdit = id => {
-    fetch(`http://localhost:5000/blood/${id}`)
+    fetch(`https://interective-dashboard-server.onrender.com/blood/${id}`)
       .then(res => res.json())
       .then(data => setSingleBlood(data));
   };
@@ -21,13 +21,16 @@ const ManageBloods = () => {
       parseInt(event.target.quantity.value) + parseInt(singleBlood?.quantity);
     // console.log(newQuantity);
     const updateQuantity = { quantity: newQuantity };
-    fetch(`http://localhost:5000/bloodId/${singleBlood?._id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateQuantity),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/bloodId/${singleBlood?._id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateQuantity),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Restock Is Successfully');
@@ -44,13 +47,16 @@ const ManageBloods = () => {
         parseInt(singleBlood?.quantity) - parseInt(event.target.quantity.value);
 
       const updateQuantity = { quantity: newQuantity };
-      fetch(`http://localhost:5000/bloodId/${singleBlood?._id}`, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(updateQuantity),
-      })
+      fetch(
+        `https://interective-dashboard-server.onrender.com/bloodId/${singleBlood?._id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(updateQuantity),
+        }
+      )
         .then(res => res.json())
         .then(data => {
           toast.success('Decrease Is Successfully');

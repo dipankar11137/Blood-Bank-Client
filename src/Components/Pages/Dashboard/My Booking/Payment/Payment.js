@@ -7,7 +7,9 @@ const Payment = () => {
   const { id } = useParams('');
   const [buyBlood, setBuyBlood] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/buyBloodBuyId/${id}`)
+    fetch(
+      `https://interective-dashboard-server.onrender.com/buyBloodBuyId/${id}`
+    )
       .then(res => res.json())
       .then(data => setBuyBlood(data));
   }, [buyBlood, id]);
@@ -28,13 +30,16 @@ const Payment = () => {
   };
   const handleVCode = () => {
     const updatePayment = { payment: true };
-    fetch(`http://localhost:5000/buyBloodPayment/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updatePayment),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/buyBloodPayment/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updatePayment),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Payment Successfully');

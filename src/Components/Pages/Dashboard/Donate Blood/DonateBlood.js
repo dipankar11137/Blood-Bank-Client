@@ -18,7 +18,7 @@ const DonateBlood = () => {
     reset,
   } = useForm();
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://interective-dashboard-server.onrender.com/user/${email}`)
       .then(res => res.json())
       .then(data => setUsers(data));
   }, [users, email]);
@@ -34,13 +34,16 @@ const DonateBlood = () => {
       studentId: userOne?.studentId,
       accept: false,
     };
-    fetch(`http://localhost:5000/donateBlood/${userOne?.email}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateData),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/donateBlood/${userOne?.email}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateData),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Done');

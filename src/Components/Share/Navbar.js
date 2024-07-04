@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { BiDonateBlood } from "react-icons/bi";
+import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { BiDonateBlood } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
@@ -15,11 +15,11 @@ const Navbar = () => {
     signOut(auth);
   };
 
-  useEffect(() => {
-    fetch(`https://boxberry.onrender.com/carBooking/${email}`)
-      .then(res => res.json())
-      .then(data => setBooking(data));
-  }, [booking, email]);
+  // useEffect(() => {
+  //   fetch(`https://boxberry.onrender.com/carBooking/${email}`)
+  //     .then(res => res.json())
+  //     .then(data => setBooking(data));
+  // }, [booking, email]);
 
   // const handleBook = () => {
   //   navigate("/myOrders");
@@ -129,9 +129,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal p-0  hover:bg-se">
-            {menuItem}
-          </ul>
+          <ul class="menu menu-horizontal p-0  hover:bg-se">{menuItem}</ul>
         </div>
       </div>
     </div>

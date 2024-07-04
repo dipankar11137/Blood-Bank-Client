@@ -11,7 +11,7 @@ const MyBookings = () => {
   const [buys, setBuys] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:5000/buyBlood/${email}`)
+    fetch(`https://interective-dashboard-server.onrender.com/buyBlood/${email}`)
       .then(res => res.json())
       .then(data => setBuys(data));
   }, [buys, email]);
@@ -23,7 +23,7 @@ const MyBookings = () => {
   const handleRemove = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/buyBlood/${id}`;
+      const url = `https://interective-dashboard-server.onrender.com/buyBlood/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

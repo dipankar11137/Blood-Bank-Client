@@ -11,12 +11,12 @@ const Bloods = () => {
   const [user, setUser] = useState([]);
   const navigation = useNavigate();
   useEffect(() => {
-    fetch('http://localhost:5000/bloods')
+    fetch('https://interective-dashboard-server.onrender.com/bloods')
       .then(res => res.json())
       .then(data => setBloods(data));
   }, [bloods]);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://interective-dashboard-server.onrender.com/user/${email}`)
       .then(res => res.json())
       .then(data => setUser(data));
   }, [user, email]);

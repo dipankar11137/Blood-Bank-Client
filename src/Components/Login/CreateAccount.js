@@ -38,13 +38,16 @@ const CreateAccount = () => {
       bloodGroup,
     };
     // console.log(updateUser);
-    fetch(`http://localhost:5000/create-user/${data?.email}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateUser),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/create-user/${data?.email}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateUser),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Successfully Create a Profile');

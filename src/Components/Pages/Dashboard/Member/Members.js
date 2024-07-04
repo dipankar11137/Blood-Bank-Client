@@ -5,7 +5,7 @@ import Member from './Member';
 const Members = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/user`)
+    fetch(`https://interective-dashboard-server.onrender.com/user`)
       .then(res => res.json())
       .then(data => setUsers(data));
   }, [users]);
@@ -20,13 +20,16 @@ const Members = () => {
     };
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      fetch(`http://localhost:5000/create-user/${email}`, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(updatedProfile),
-      })
+      fetch(
+        `https://interective-dashboard-server.onrender.com/create-user/${email}`,
+        {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(updatedProfile),
+        }
+      )
         .then(res => res.json())
         .then(data => {
           toast.success(' Successfully Add Member ');
@@ -43,13 +46,16 @@ const Members = () => {
     };
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      fetch(`http://localhost:5000/create-user/${email}`, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(updatedProfile),
-      })
+      fetch(
+        `https://interective-dashboard-server.onrender.com/create-user/${email}`,
+        {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(updatedProfile),
+        }
+      )
         .then(res => res.json())
         .then(data => {
           toast.success('Successfully Remove  Member ');

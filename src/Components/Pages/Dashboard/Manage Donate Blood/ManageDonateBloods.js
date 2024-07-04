@@ -5,14 +5,14 @@ import ManageDonateBlood from './ManageDonateBlood';
 const ManageDonateBloods = () => {
   const [mBloods, setMBloods] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/donateBlood`)
+    fetch(`https://interective-dashboard-server.onrender.com/donateBlood`)
       .then(res => res.json())
       .then(data => setMBloods(data));
   }, [mBloods]);
   const handleDelete = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/donateBlood/${id}`;
+      const url = `https://interective-dashboard-server.onrender.com/donateBlood/${id}`;
       fetch(url, {
         method: 'DELETE',
       })
@@ -26,13 +26,16 @@ const ManageDonateBloods = () => {
   };
   const handleAccept = id => {
     const updateDelivered = { accept: true };
-    fetch(`http://localhost:5000/donateBloodId/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateDelivered),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/donateBloodId/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateDelivered),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Accepted ');

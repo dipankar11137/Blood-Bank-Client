@@ -16,12 +16,12 @@ const FreeBook = () => {
   const userOne = users[0];
 
   useEffect(() => {
-    fetch(`http://localhost:5000/blood/${id}`)
+    fetch(`https://interective-dashboard-server.onrender.com/blood/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data));
   }, [id]);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://interective-dashboard-server.onrender.com/user/${email}`)
       .then(res => res.json())
       .then(data => setUsers(data));
   }, [users, email]);
@@ -36,13 +36,16 @@ const FreeBook = () => {
 
   const handleFree = () => {
     const updateFreeBlood = { freeBlood: true };
-    fetch(`http://localhost:5000/userId/${updateId}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateFreeBlood),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/userId/${updateId}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateFreeBlood),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success(' Successfully Book this Blood');
@@ -62,7 +65,7 @@ const FreeBook = () => {
       user: userOne,
     };
     console.log(changeUrl);
-    const url = `http://localhost:5000/buyBlood`;
+    const url = `https://interective-dashboard-server.onrender.com/buyBlood`;
     fetch(url, {
       method: 'POST',
       headers: {

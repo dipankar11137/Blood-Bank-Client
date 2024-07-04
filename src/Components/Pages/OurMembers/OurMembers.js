@@ -5,7 +5,7 @@ const OurMembers = () => {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user`)
+    fetch(`https://interective-dashboard-server.onrender.com/user`)
       .then(res => res.json())
       .then(data => setMembers(data));
   }, [members]);

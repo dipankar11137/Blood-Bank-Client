@@ -5,20 +5,23 @@ import ManageBuy from './ManageBuy';
 const ManageBuys = () => {
   const [buys, setBuys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/buyBlood`)
+    fetch(`https://interective-dashboard-server.onrender.com/buyBlood`)
       .then(res => res.json())
       .then(data => setBuys(data));
   }, [buys]);
 
   const handleDelivered = id => {
     const updateDelivered = { delivered: true };
-    fetch(`http://localhost:5000/buyBloodId/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateDelivered),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/buyBloodId/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateDelivered),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Successfully Delivered  Blood ');
@@ -28,7 +31,7 @@ const ManageBuys = () => {
   const handleDelete = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/buyBlood/${id}`;
+      const url = `https://interective-dashboard-server.onrender.com/buyBlood/${id}`;
       fetch(url, {
         method: 'DELETE',
       })
